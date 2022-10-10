@@ -1,0 +1,10 @@
+Opis aplikacji:
+Aplikacja przedstawia przepisy i sposoby wykonania dań i cocktaili.
+JAVA
+
+Funkcje:
+-odczyt przepisów
+-ocenianie przepisów
+-dodawanie własnych przepisów (pliki)
+-udostępnianie własnych przepisów
+-kategoryzacja przepisów
