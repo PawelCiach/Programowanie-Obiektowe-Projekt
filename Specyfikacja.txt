@@ -1,5 +1,5 @@
 Opis aplikacji:
-Aplikacja przedstawia przepisy i sposoby wykonania dań i cocktaili.
+Aplikacja na system iOS, przedstawia przepisy i sposoby wykonania dań i cocktaili.
 Język Swift
 
 Funkcje:
