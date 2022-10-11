@@ -1,6 +1,6 @@
 Opis aplikacji:
 Aplikacja przedstawia przepisy i sposoby wykonania dań i cocktaili.
-Język nieznany
+Język Swift
 
 Funkcje:
 -odczyt przepisów
