@@ -1,6 +1,6 @@
 Opis aplikacji:
 Aplikacja przedstawia przepisy i sposoby wykonania dań i cocktaili.
-JAVA
+Język nieznany
 
 Funkcje:
 -odczyt przepisów
