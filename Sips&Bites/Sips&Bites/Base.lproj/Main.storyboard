@@ -283,10 +283,8 @@
                     <navigationItem key="navigationItem" id="oMn-Q8-3es"/>
                     <connections>
                         <segue destination="mnh-QK-1Ru" kind="show" identifier="toDanieVC" id="v8z-Ah-hc7"/>
-                        <segue destination="aO8-mO-RdK" kind="popoverPresentation" identifier="toDaniaCategories" id="azI-gK-uqC">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
                         <segue destination="eT3-oy-aDm" kind="show" identifier="toNoweDanie" id="IGP-nO-wDL"/>
+                        <segue destination="aO8-mO-RdK" kind="modal" identifier="toDaniaCategories" id="EqL-u3-26w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vg1-89-bOQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -481,10 +479,10 @@
             </objects>
             <point key="canvasLocation" x="2073" y="-1606"/>
         </scene>
-        <!--View Controller-->
+        <!--To Dania Categories-->
         <scene sceneID="eEk-1R-EpN">
             <objects>
-                <viewController id="aO8-mO-RdK" sceneMemberID="viewController">
+                <viewController id="aO8-mO-RdK" customClass="toDaniaCategories" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KNx-BL-m6r">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
