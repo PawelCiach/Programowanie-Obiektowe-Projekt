@@ -28,5 +28,6 @@ extension daniaVC: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "toDanieVC", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

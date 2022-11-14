@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -88,6 +89,7 @@
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="RcV-zc-QVa">
                                 <rect key="frame" x="130" y="165.33333333333334" width="60" height="106.66666666666666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="105" id="bfg-Gx-C7h"/>
@@ -105,11 +107,11 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Dania" cornerStyle="medium">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="strokeColor" systemColor="labelColor"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="21"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="daniaTapped:" destination="kX2-yr-eP8" eventType="touchUpInside" id="RMq-CT-yJp"/>
@@ -124,11 +126,11 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Cocktaile" cornerStyle="medium">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="strokeColor" systemColor="labelColor"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="21"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="cocktaileTapped:" destination="kX2-yr-eP8" eventType="touchUpInside" id="bj4-ra-lPX"/>
@@ -143,11 +145,11 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Użytkownik" cornerStyle="medium">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="strokeColor" systemColor="labelColor"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="21"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="userTapped:" destination="kX2-yr-eP8" eventType="touchUpInside" id="Ceh-Qj-4QT"/>
@@ -251,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vg1-89-bOQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2074" y="-891"/>
+            <point key="canvasLocation" x="2074" y="-1838"/>
         </scene>
         <!--DanieVC-->
         <scene sceneID="UME-iH-sQG">
@@ -267,7 +269,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MKe-uG-bcw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2979" y="-891"/>
+            <point key="canvasLocation" x="2977" y="-1838"/>
         </scene>
         <!--CocktaileVC-->
         <scene sceneID="D3C-Gd-H1q">
@@ -295,7 +297,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XtI-YY-jrw" id="Lwb-Fj-VmH">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="tintColor" systemColor="labelColor"/>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" systemColor="labelColor"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -303,21 +307,50 @@
                                     <outlet property="delegate" destination="B2x-2V-Q4E" id="2ld-zG-Utf"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABz-gd-GdC">
+                                <rect key="frame" x="265" y="166" width="60" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="MU3-cd-3vb"/>
+                                    <constraint firstAttribute="height" constant="105" id="ddk-rG-DOl"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="list.bullet.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaR-8p-dgv">
+                                <rect key="frame" x="65" y="166" width="60" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="MPN-a7-4XW"/>
+                                    <constraint firstAttribute="height" constant="105" id="jgQ-9F-jRB"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7L1-8K-b3N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="D4x-VX-uqf" firstAttribute="centerX" secondItem="whR-ML-v6b" secondAttribute="centerX" id="FPe-mV-EjJ"/>
+                            <constraint firstItem="ABz-gd-GdC" firstAttribute="leading" secondItem="D4x-VX-uqf" secondAttribute="trailing" constant="40" id="Mjt-6S-3fz"/>
                             <constraint firstItem="EVj-cn-Vu0" firstAttribute="leading" secondItem="7L1-8K-b3N" secondAttribute="leading" id="TRJ-WP-wGb"/>
                             <constraint firstItem="EVj-cn-Vu0" firstAttribute="top" secondItem="D4x-VX-uqf" secondAttribute="bottom" constant="20" id="W3n-Ab-Q8H"/>
+                            <constraint firstItem="QaR-8p-dgv" firstAttribute="top" secondItem="7L1-8K-b3N" secondAttribute="top" constant="75" id="WaO-nP-U4V"/>
+                            <constraint firstItem="D4x-VX-uqf" firstAttribute="leading" secondItem="QaR-8p-dgv" secondAttribute="trailing" constant="40" id="ive-ij-ca9"/>
                             <constraint firstItem="7L1-8K-b3N" firstAttribute="trailing" secondItem="EVj-cn-Vu0" secondAttribute="trailing" id="kUY-mw-qWQ"/>
                             <constraint firstAttribute="bottom" secondItem="EVj-cn-Vu0" secondAttribute="bottom" id="mck-6M-mBA"/>
+                            <constraint firstItem="ABz-gd-GdC" firstAttribute="top" secondItem="7L1-8K-b3N" secondAttribute="top" constant="75" id="rBg-GM-txp"/>
                             <constraint firstItem="D4x-VX-uqf" firstAttribute="top" secondItem="7L1-8K-b3N" secondAttribute="top" constant="75" id="vRU-cV-fnW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="87A-vI-7VW"/>
                     <connections>
                         <segue destination="X1Q-jJ-ekd" kind="show" identifier="toCocktailVC" id="0gB-p4-iX0"/>
+                        <segue destination="oPs-jE-byV" kind="modal" id="E9p-ck-aQf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fY-mC-caf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -363,6 +396,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="9ez-Gu-MAI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" name="AccentColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="cAp-oo-rV9"/>
                 </viewController>
@@ -370,12 +404,33 @@
             </objects>
             <point key="canvasLocation" x="2978" y="-209"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="OPt-v5-mUk">
+            <objects>
+                <viewController id="oPs-jE-byV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wSz-5X-q1d" customClass="cocktailCategoriesVC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fCq-h8-eke"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vSt-RT-LRW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b1w-MW-z7I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2977" y="-1036"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="95"/>
         <image name="fork.knife" catalog="system" width="94" height="128"/>
+        <image name="list.bullet.circle" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
+        <image name="plus.circle" catalog="system" width="128" height="123"/>
         <image name="wineglass" catalog="system" width="95" height="128"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

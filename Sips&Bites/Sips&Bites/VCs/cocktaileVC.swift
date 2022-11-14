@@ -4,7 +4,7 @@ import UIKit
 
 class cocktaileVC: UIViewController {
 
-    var cocktaile: [String]=["OldFashioned","Last Word"]
+    var cocktaile: [String]=["Old Fashioned","Last Word"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,5 +26,6 @@ extension cocktaileVC: UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "toCocktailVC", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
