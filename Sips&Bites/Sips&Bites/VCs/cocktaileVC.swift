@@ -4,7 +4,7 @@ import UIKit
 
 class cocktaileVC: UIViewController {
 
-    var cocktaile: [String]=[]
+    var cocktaile: [String]=["OldFashioned","Last Word"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
