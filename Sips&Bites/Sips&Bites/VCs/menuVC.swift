@@ -12,6 +12,7 @@ class menuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Przepis.testnt()
+        Przepis.testnt()
         //lDanie.danietest()
         
     }

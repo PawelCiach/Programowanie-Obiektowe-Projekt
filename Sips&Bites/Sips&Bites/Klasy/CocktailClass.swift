@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum baseAlc:String{
+    case vodka="Wodka"
+    case gin="Gin"
+    
+}
 enum sour:String{
     case cytryna = "Cytryna"
     case limonka = "Limonka"

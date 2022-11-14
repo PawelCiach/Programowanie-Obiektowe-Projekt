@@ -7,13 +7,13 @@
 
 import UIKit
 
+
 enum rodzajskladnika{
     case mieso
     case warzywo
     case dodatek
     case owoc
     case maczne
-
 }
 
 class skladnik{
