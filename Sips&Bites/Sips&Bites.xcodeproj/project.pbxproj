@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01013F29292271AB00CE3D5E /* danieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01013F28292271AB00CE3D5E /* danieVC.swift */; };
+		01013F2B292271F100CE3D5E /* cocktailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01013F2A292271F100CE3D5E /* cocktailVC.swift */; };
 		015EA7912906D77700CEEED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EA7902906D77700CEEED1 /* AppDelegate.swift */; };
 		015EA7932906D77700CEEED1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015EA7922906D77700CEEED1 /* SceneDelegate.swift */; };
 		015EA7982906D77700CEEED1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015EA7962906D77700CEEED1 /* Main.storyboard */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01013F28292271AB00CE3D5E /* danieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = danieVC.swift; sourceTree = "<group>"; };
+		01013F2A292271F100CE3D5E /* cocktailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cocktailVC.swift; sourceTree = "<group>"; };
 		015EA78D2906D77700CEEED1 /* Sips&Bites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sips&Bites.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		015EA7902906D77700CEEED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		015EA7922906D77700CEEED1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,10 +169,12 @@
 		981E4323291A99CB00B4AA78 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
-				01A8B5D42907FEAC00FDE75E /* daniaVC.swift */,
-				01A8B5D82907FED600FDE75E /* userVC.swift */,
-				01A8B5D62907FEBE00FDE75E /* cocktaileVC.swift */,
 				015EA7C22906E73000CEEED1 /* menuVC.swift */,
+				01A8B5D42907FEAC00FDE75E /* daniaVC.swift */,
+				01A8B5D62907FEBE00FDE75E /* cocktaileVC.swift */,
+				01A8B5D82907FED600FDE75E /* userVC.swift */,
+				01013F28292271AB00CE3D5E /* danieVC.swift */,
+				01013F2A292271F100CE3D5E /* cocktailVC.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 				01A8B5D72907FEBE00FDE75E /* cocktaileVC.swift in Sources */,
 				01A8B5D92907FED600FDE75E /* userVC.swift in Sources */,
 				98DD74C729194CE5008F602E /* CocktailClass.swift in Sources */,
+				01013F2B292271F100CE3D5E /* cocktailVC.swift in Sources */,
 				015EA7912906D77700CEEED1 /* AppDelegate.swift in Sources */,
 				988FDCDA2916FE1A004F9470 /* PrzepisClass.swift in Sources */,
 				015EA7C32906E73000CEEED1 /* menuVC.swift in Sources */,
@@ -314,6 +321,7 @@
 				981E4320291A992F00B4AA78 /* UzytkownikClass.swift in Sources */,
 				015EA7932906D77700CEEED1 /* SceneDelegate.swift in Sources */,
 				015EA7C12906D7C500CEEED1 /* Sips&BitesVC.swift in Sources */,
+				01013F29292271AB00CE3D5E /* danieVC.swift in Sources */,
 				98DD74C529194BD3008F602E /* DanieClass.swift in Sources */,
 				988FDCD62916F4D3004F9470 /* QuestionableDesignChoices.swift in Sources */,
 				01A8B5D52907FEAD00FDE75E /* daniaVC.swift in Sources */,
