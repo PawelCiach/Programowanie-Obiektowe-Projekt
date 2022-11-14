@@ -9,6 +9,12 @@ class cocktaileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    @IBAction func cocktailsCategoriesButton(_ sender: Any) {
+        performSegue(withIdentifier: "toCocktailsCategories", sender: nil)
+    }
+    @IBAction func newCocktailButton(_ sender: Any) {
+        performSegue(withIdentifier: "toNowyCocktail", sender: nil)
+    }
 }
 
 extension cocktaileVC: UITableViewDelegate,UITableViewDataSource{

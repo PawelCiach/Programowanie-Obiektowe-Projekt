@@ -9,6 +9,13 @@ class daniaVC: UIViewController{
         super.viewDidLoad()
 
     }
+    @IBAction func daniaCategoriesButton(_ sender: Any) {
+        performSegue(withIdentifier: "toDaniaCategories", sender: nil)
+    }
+    
+    @IBAction func newDanieButton(_ sender: Any) {
+        performSegue(withIdentifier: "toNoweDanie", sender: nil)
+    }
 }
 
 extension daniaVC: UITableViewDelegate, UITableViewDataSource{
