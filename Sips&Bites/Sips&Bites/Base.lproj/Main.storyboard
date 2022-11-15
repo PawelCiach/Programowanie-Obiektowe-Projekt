@@ -298,8 +298,21 @@
                     <view key="view" contentMode="scaleToFill" id="fOF-rO-uuj" customClass="danieVC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l3R-1m-mrC">
+                                <rect key="frame" x="47" y="142" width="320" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="GlC-Q2-aQY"/>
+                                    <constraint firstAttribute="width" constant="320" id="cgl-1z-D9H"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dsB-dS-6yV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="l3R-1m-mrC" firstAttribute="top" secondItem="fOF-rO-uuj" secondAttribute="topMargin" constant="50" id="Ciy-H7-FaU"/>
+                            <constraint firstItem="l3R-1m-mrC" firstAttribute="centerX" secondItem="fOF-rO-uuj" secondAttribute="centerX" id="x5W-bh-3Wf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dJq-EU-f4R"/>
                 </viewController>
@@ -437,9 +450,22 @@
                     <view key="view" contentMode="scaleToFill" id="fg3-AR-Q61" customClass="cocktailVC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oldFashioned" translatesAutoresizingMaskIntoConstraints="NO" id="Lwu-OV-cq8">
+                                <rect key="frame" x="47" y="142" width="320" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="Oot-xO-Sqr"/>
+                                    <constraint firstAttribute="width" constant="320" id="he5-Ea-lVg"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9ez-Gu-MAI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" name="AccentColor"/>
+                        <constraints>
+                            <constraint firstItem="Lwu-OV-cq8" firstAttribute="top" secondItem="9ez-Gu-MAI" secondAttribute="top" constant="50" id="BRI-jl-a7I"/>
+                            <constraint firstItem="Lwu-OV-cq8" firstAttribute="centerX" secondItem="fg3-AR-Q61" secondAttribute="centerX" id="CEf-ai-fvW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cAp-oo-rV9"/>
                 </viewController>
@@ -447,15 +473,34 @@
             </objects>
             <point key="canvasLocation" x="2975" y="768"/>
         </scene>
-        <!--View Controller-->
+        <!--Cocktaile CategoriesVC-->
         <scene sceneID="OPt-v5-mUk">
             <objects>
-                <viewController id="oPs-jE-byV" sceneMemberID="viewController">
+                <viewController id="oPs-jE-byV" customClass="cocktaileCategoriesVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wSz-5X-q1d" customClass="cocktailCategoriesVC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tu bedą kategorie wyboru cocktaili" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="htg-pM-1kV">
+                                <rect key="frame" x="57" y="407" width="300" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbn-fc-F5G">
+                                <rect key="frame" x="67" y="417" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="fCq-h8-eke"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="htg-pM-1kV" firstAttribute="centerY" secondItem="wSz-5X-q1d" secondAttribute="centerY" id="Ljv-zE-CWm"/>
+                            <constraint firstItem="htg-pM-1kV" firstAttribute="centerX" secondItem="wSz-5X-q1d" secondAttribute="centerX" id="hiw-ES-DwP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vSt-RT-LRW"/>
                 </viewController>
@@ -463,15 +508,27 @@
             </objects>
             <point key="canvasLocation" x="2975" y="110"/>
         </scene>
-        <!--View Controller-->
+        <!--New DanieVC-->
         <scene sceneID="Sww-2w-qLc">
             <objects>
-                <viewController id="eT3-oy-aDm" sceneMemberID="viewController">
+                <viewController id="eT3-oy-aDm" customClass="newDanieVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3U0-yP-ODC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tu bedzie menu dodawania dań" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0i-zc-aRJ">
+                                <rect key="frame" x="71" y="436" width="272.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="TuK-YU-R0L"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="q0i-zc-aRJ" firstAttribute="centerY" secondItem="3U0-yP-ODC" secondAttribute="centerY" id="YE8-Tj-pAw"/>
+                            <constraint firstItem="q0i-zc-aRJ" firstAttribute="centerX" secondItem="3U0-yP-ODC" secondAttribute="centerX" id="goQ-0c-cLO"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YdU-z9-YJI"/>
                 </viewController>
@@ -479,31 +536,55 @@
             </objects>
             <point key="canvasLocation" x="2073" y="-1606"/>
         </scene>
-        <!--To Dania Categories-->
+        <!--Dania Categories-->
         <scene sceneID="eEk-1R-EpN">
             <objects>
-                <viewController id="aO8-mO-RdK" customClass="toDaniaCategories" sceneMemberID="viewController">
+                <viewController id="aO8-mO-RdK" customClass="daniaCategories" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KNx-BL-m6r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tu bedą kategorie wyboru dań" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4T-gW-AfG">
+                                <rect key="frame" x="76.5" y="407" width="261" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Zzm-TZ-Aln"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="n4T-gW-AfG" firstAttribute="centerX" secondItem="KNx-BL-m6r" secondAttribute="centerX" id="3Ld-HW-VqP"/>
+                            <constraint firstItem="n4T-gW-AfG" firstAttribute="centerY" secondItem="KNx-BL-m6r" secondAttribute="centerY" id="E5C-y7-EUC"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zB1-hN-QCU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2975" y="-1197"/>
         </scene>
-        <!--CocktailVC-->
+        <!--New CocktailVC-->
         <scene sceneID="NTK-lf-s3d">
             <objects>
-                <viewController id="kWZ-lj-Tsb" customClass="cocktailVC" sceneMemberID="viewController">
+                <viewController id="kWZ-lj-Tsb" customClass="newCocktailVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3rf-W9-03e" customClass="cocktailVC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tu bedzie menu dodawania nowych cocktaili" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ar1-8a-4FK">
+                                <rect key="frame" x="74" y="440" width="266" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="gY9-qv-go4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" name="AccentColor"/>
+                        <constraints>
+                            <constraint firstItem="ar1-8a-4FK" firstAttribute="centerX" secondItem="3rf-W9-03e" secondAttribute="centerX" id="Olf-aT-g8b"/>
+                            <constraint firstItem="ar1-8a-4FK" firstAttribute="centerY" secondItem="3rf-W9-03e" secondAttribute="centerY" id="kBG-Jm-9C5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zfg-D2-ert"/>
                 </viewController>
@@ -516,6 +597,7 @@
         <image name="arrow.left" catalog="system" width="128" height="95"/>
         <image name="fork.knife" catalog="system" width="94" height="128"/>
         <image name="list.bullet.circle" catalog="system" width="128" height="123"/>
+        <image name="oldFashioned" width="286" height="176"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="plus.circle" catalog="system" width="128" height="123"/>
         <image name="wineglass" catalog="system" width="95" height="128"/>
