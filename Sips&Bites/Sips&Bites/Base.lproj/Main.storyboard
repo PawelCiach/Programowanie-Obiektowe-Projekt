@@ -429,19 +429,43 @@
                                     <constraint firstAttribute="height" constant="105" id="tCK-VZ-Krb"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Imię" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTQ-Wt-JWX">
+                                <rect key="frame" x="41.5" y="387" width="331" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nazwisko" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TzX-ST-CJR">
+                                <rect key="frame" x="41.5" y="431" width="331" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rola" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lTK-Ul-866">
+                                <rect key="frame" x="41.5" y="475" width="331" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jFc-Z4-TeF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="TzX-ST-CJR" firstAttribute="width" secondItem="6e2-lU-z4U" secondAttribute="width" multiplier="0.8" id="3G6-tA-YQp"/>
+                            <constraint firstItem="lTK-Ul-866" firstAttribute="top" secondItem="TzX-ST-CJR" secondAttribute="bottom" constant="10" id="TkX-z8-twR"/>
                             <constraint firstItem="5IB-4r-Kj0" firstAttribute="top" secondItem="jFc-Z4-TeF" secondAttribute="top" constant="75" id="UdR-uO-pxB"/>
+                            <constraint firstItem="TzX-ST-CJR" firstAttribute="centerY" secondItem="6e2-lU-z4U" secondAttribute="centerY" id="Y0A-rY-CfB"/>
+                            <constraint firstItem="TzX-ST-CJR" firstAttribute="top" secondItem="fTQ-Wt-JWX" secondAttribute="bottom" constant="10" id="f1Z-G7-BQ9"/>
+                            <constraint firstItem="fTQ-Wt-JWX" firstAttribute="centerX" secondItem="6e2-lU-z4U" secondAttribute="centerX" id="jbf-Ae-oa2"/>
                             <constraint firstItem="5IB-4r-Kj0" firstAttribute="centerX" secondItem="6e2-lU-z4U" secondAttribute="centerX" id="kUH-Dg-dnv"/>
+                            <constraint firstItem="fTQ-Wt-JWX" firstAttribute="width" secondItem="6e2-lU-z4U" secondAttribute="width" multiplier="0.8" id="tZA-fj-xPd"/>
+                            <constraint firstItem="lTK-Ul-866" firstAttribute="centerX" secondItem="6e2-lU-z4U" secondAttribute="centerX" id="vxX-vk-0YE"/>
+                            <constraint firstItem="lTK-Ul-866" firstAttribute="width" secondItem="6e2-lU-z4U" secondAttribute="width" multiplier="0.8" id="vxf-7B-U2L"/>
+                            <constraint firstItem="TzX-ST-CJR" firstAttribute="centerX" secondItem="6e2-lU-z4U" secondAttribute="centerX" id="zgc-lB-9fC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qT4-JC-2yU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxz-Pe-d8N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1242" y="525"/>
+            <point key="canvasLocation" x="1240.5797101449277" y="525"/>
         </scene>
         <!--CocktailVC-->
         <scene sceneID="xPf-qk-ZlP">
@@ -487,13 +511,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbn-fc-F5G">
-                                <rect key="frame" x="67" y="417" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fCq-h8-eke"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -517,7 +534,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tu bedzie menu dodawania dań" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0i-zc-aRJ">
-                                <rect key="frame" x="71" y="436" width="272.5" height="24"/>
+                                <rect key="frame" x="70.5" y="436" width="273" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -561,7 +578,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zB1-hN-QCU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2975" y="-1197"/>
+            <point key="canvasLocation" x="2973.913043478261" y="-1197.3214285714284"/>
         </scene>
         <!--New CocktailVC-->
         <scene sceneID="NTK-lf-s3d">
