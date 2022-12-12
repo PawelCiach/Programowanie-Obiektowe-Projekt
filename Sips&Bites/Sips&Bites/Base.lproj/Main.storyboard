@@ -282,6 +282,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="oMn-Q8-3es"/>
                     <connections>
+                        <outlet property="tableView" destination="1Ej-yL-KkZ" id="eHq-oq-nHO"/>
                         <segue destination="mnh-QK-1Ru" kind="show" identifier="toDanieVC" id="v8z-Ah-hc7"/>
                         <segue destination="eT3-oy-aDm" kind="show" identifier="toNoweDanie" id="IGP-nO-wDL"/>
                         <segue destination="aO8-mO-RdK" kind="modal" identifier="toDaniaCategories" id="EqL-u3-26w"/>
@@ -404,14 +405,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="87A-vI-7VW"/>
                     <connections>
+                        <outlet property="tableView" destination="EVj-cn-Vu0" id="T3x-xE-0Wv"/>
                         <segue destination="X1Q-jJ-ekd" kind="show" identifier="toCocktailVC" id="0gB-p4-iX0"/>
                         <segue destination="oPs-jE-byV" kind="modal" identifier="toCocktailsCategories" id="E9p-ck-aQf"/>
-                        <segue destination="kWZ-lj-Tsb" kind="show" identifier="toNowyCocktail" id="wnG-tz-MVK"/>
+                        <segue destination="kWZ-lj-Tsb" kind="show" identifier="toNowyCocktail" id="brs-Zp-e8a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fY-mC-caf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2073" y="365"/>
+            <point key="canvasLocation" x="2203" y="200"/>
         </scene>
         <!--UserVC-->
         <scene sceneID="Lju-Xc-vNH">
@@ -444,6 +446,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="XD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LNv-EK-Ut8">
+                                <rect key="frame" x="129" y="610" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jFc-Z4-TeF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -470,7 +478,7 @@
         <!--CocktailVC-->
         <scene sceneID="xPf-qk-ZlP">
             <objects>
-                <viewController id="X1Q-jJ-ekd" customClass="cocktailVC" sceneMemberID="viewController">
+                <viewController id="X1Q-jJ-ekd" customClass="cocktailVC" customModule="Sips_Bites" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fg3-AR-Q61" customClass="cocktailVC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -482,6 +490,13 @@
                                     <constraint firstAttribute="width" constant="320" id="he5-Ea-lVg"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUl-06-UIy">
+                                <rect key="frame" x="83" y="346" width="249" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9ez-Gu-MAI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -491,11 +506,22 @@
                             <constraint firstItem="Lwu-OV-cq8" firstAttribute="centerX" secondItem="fg3-AR-Q61" secondAttribute="centerX" id="CEf-ai-fvW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cAp-oo-rV9"/>
+                    <navigationItem key="navigationItem" id="cAp-oo-rV9">
+                        <barButtonItem key="rightBarButtonItem" image="trash" catalog="system" id="WEn-5W-OW4">
+                            <connections>
+                                <action selector="trashTapped:" destination="X1Q-jJ-ekd" id="qTp-cV-VEN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nazwa" destination="IUl-06-UIy" id="OOa-Vh-IoX"/>
+                        <segue destination="ACO-lb-Wrx" kind="unwind" identifier="backToCocktaileVC" unwindAction="unwind:" id="YK9-GG-k1P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckO-a9-2NN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ACO-lb-Wrx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2975" y="768"/>
+            <point key="canvasLocation" x="2973.913043478261" y="767.41071428571422"/>
         </scene>
         <!--Cocktaile CategoriesVC-->
         <scene sceneID="OPt-v5-mUk">
@@ -528,30 +554,59 @@
         <!--New DanieVC-->
         <scene sceneID="Sww-2w-qLc">
             <objects>
-                <viewController id="eT3-oy-aDm" customClass="newDanieVC" sceneMemberID="viewController">
+                <viewController id="eT3-oy-aDm" customClass="newDanieVC" customModule="Sips_Bites" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3U0-yP-ODC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tu bedzie menu dodawania dań" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0i-zc-aRJ">
-                                <rect key="frame" x="70.5" y="436" width="273" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4g-tb-gRN">
+                                <rect key="frame" x="20" y="772" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="5Fq-Wj-aCB"/>
+                                    <constraint firstAttribute="width" constant="374" id="LP6-vB-SqJ"/>
+                                    <constraint firstAttribute="height" constant="44" id="crk-1e-zxM"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Dodaj przepis" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dodaj własny przepis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFX-Er-yW3">
+                                <rect key="frame" x="44" y="92" width="327" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nazwa przepisu:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxe-62-RL0">
+                                <rect key="frame" x="20" y="154" width="130" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wprowadź nazwę" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="veK-ql-Rmq">
+                                <rect key="frame" x="20" y="183" width="278" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TuK-YU-R0L"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="q0i-zc-aRJ" firstAttribute="centerY" secondItem="3U0-yP-ODC" secondAttribute="centerY" id="YE8-Tj-pAw"/>
-                            <constraint firstItem="q0i-zc-aRJ" firstAttribute="centerX" secondItem="3U0-yP-ODC" secondAttribute="centerX" id="goQ-0c-cLO"/>
+                            <constraint firstItem="f4g-tb-gRN" firstAttribute="centerX" secondItem="3U0-yP-ODC" secondAttribute="centerX" id="CPv-2o-pPr"/>
+                            <constraint firstItem="TuK-YU-R0L" firstAttribute="bottom" secondItem="f4g-tb-gRN" secondAttribute="bottom" constant="46" id="vZg-kN-Bw6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YdU-z9-YJI"/>
+                    <connections>
+                        <outlet property="nazwaDania" destination="veK-ql-Rmq" id="Llb-0z-e17"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jtG-AF-ZYb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2073" y="-1606"/>
+            <point key="canvasLocation" x="2071.0144927536235" y="-1606.4732142857142"/>
         </scene>
         <!--Dania Categories-->
         <scene sceneID="eEk-1R-EpN">
@@ -583,31 +638,59 @@
         <!--New CocktailVC-->
         <scene sceneID="NTK-lf-s3d">
             <objects>
-                <viewController id="kWZ-lj-Tsb" customClass="newCocktailVC" sceneMemberID="viewController">
+                <viewController id="kWZ-lj-Tsb" customClass="newCocktailVC" customModule="Sips_Bites" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3rf-W9-03e" customClass="cocktailVC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tu bedzie menu dodawania nowych cocktaili" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ar1-8a-4FK">
-                                <rect key="frame" x="74" y="440" width="266" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nazwa cocktailu:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHW-wI-6Z9">
+                                <rect key="frame" x="142.5" y="167" width="129" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="BzA-BH-bSu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRz-mj-772">
+                                <rect key="frame" x="20" y="772" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="jvt-sj-wSh"/>
+                                </constraints>
+                                <buttonConfiguration key="configuration" style="tinted" title="Dodaj przepis" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="kWZ-lj-Tsb" eventType="touchUpInside" id="4nz-uq-IT9"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wpisz nazwę" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HHa-k5-iBZ">
+                                <rect key="frame" x="85" y="196" width="244" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="continue"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gY9-qv-go4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" name="AccentColor"/>
                         <constraints>
-                            <constraint firstItem="ar1-8a-4FK" firstAttribute="centerX" secondItem="3rf-W9-03e" secondAttribute="centerX" id="Olf-aT-g8b"/>
-                            <constraint firstItem="ar1-8a-4FK" firstAttribute="centerY" secondItem="3rf-W9-03e" secondAttribute="centerY" id="kBG-Jm-9C5"/>
+                            <constraint firstItem="gY9-qv-go4" firstAttribute="bottom" secondItem="vRz-mj-772" secondAttribute="bottom" constant="46" id="5Lo-go-Mfq"/>
+                            <constraint firstItem="vRz-mj-772" firstAttribute="centerX" secondItem="3rf-W9-03e" secondAttribute="centerX" id="KcI-G3-Ylg"/>
+                            <constraint firstItem="cHW-wI-6Z9" firstAttribute="top" secondItem="gY9-qv-go4" secondAttribute="top" constant="75" id="UKv-Bk-4O8"/>
+                            <constraint firstItem="cHW-wI-6Z9" firstAttribute="centerX" secondItem="3rf-W9-03e" secondAttribute="centerX" id="z33-Fl-CTR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zfg-D2-ert"/>
+                    <connections>
+                        <outlet property="nowaNazwa" destination="HHa-k5-iBZ" id="rTU-Ai-mwx"/>
+                        <segue destination="3a8-sL-Kd6" kind="unwind" identifier="backToCocktaileVC" unwindAction="unwind:" id="JUX-rQ-qh4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0C-BD-aKy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="3a8-sL-Kd6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2073" y="1068"/>
+            <point key="canvasLocation" x="2022" y="1032"/>
         </scene>
     </scenes>
     <resources>
@@ -617,6 +700,7 @@
         <image name="oldFashioned" width="286" height="176"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="plus.circle" catalog="system" width="128" height="123"/>
+        <image name="trash" catalog="system" width="117" height="128"/>
         <image name="wineglass" catalog="system" width="95" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -16,7 +16,7 @@ enum rodzajskladnika{
     case maczne
 }
 
-class skladnik{
+/*class skladnik{
     var nazwa:String
     var rodzaj:rodzajskladnika
     init(nazwa: String, rodzaj: rodzajskladnika) {
@@ -25,6 +25,6 @@ class skladnik{
     }
 }
 
-let kurczak=skladnik(nazwa: "Kurczak", rodzaj:.mieso)
+let kurczak=skladnik(nazwa: "Kurczak", rodzaj:.mieso)*/
 
 

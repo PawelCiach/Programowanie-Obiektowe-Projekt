@@ -12,7 +12,7 @@ enum baseAlc:String{
     case gin="Gin"
     
 }
-enum sour:String{
+public enum sour:String{
     case cytryna = "Cytryna"
     case limonka = "Limonka"
     case inny = "inny"
@@ -34,7 +34,7 @@ class technika{
     }
 }
 
-class cocktail:Przepis{
+/*class cocktail:Przepis{
     var sour:sour
     let technika:technika
     var sweet:sweet
@@ -45,3 +45,4 @@ class cocktail:Przepis{
         super.init(ProfilSmakowy: ProfilSmakowy, CzasPrzygotowania: CzasPrzygotowania, SposobPrzygotowania: SposobPrzygotowania, Koszt: Koszt, listaskladnikow: listaskladnikow, NazwaPrzepisu: NazwaPrzepisu, Autor: Autor, Wstep: Wstep)
     }
 }
+*/

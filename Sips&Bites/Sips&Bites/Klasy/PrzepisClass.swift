@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-class Przepis{
+/*class Przepis{
     let ProfilSmakowy:String
     let CzasPrzygotowania:Int
     let SposobPrzygotowania:String
@@ -39,7 +39,7 @@ class Przepis{
     
 }
 
-let test = Przepis(ProfilSmakowy: "wytrawny", CzasPrzygotowania: 5, SposobPrzygotowania: "najeb rzeczy i do pieca", Koszt: 10, listaskladnikow: [kurczak], NazwaPrzepisu: "Test", Autor:nil , Wstep:nil )
+let test = Przepis(ProfilSmakowy: "wytrawny", CzasPrzygotowania: 5, SposobPrzygotowania: "najeb rzeczy i do pieca", Koszt: 10, listaskladnikow: [kurczak], NazwaPrzepisu: "Test", Autor:nil , Wstep:nil )*/
 
 
     

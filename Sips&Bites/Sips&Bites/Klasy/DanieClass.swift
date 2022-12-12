@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum cuisine:String{
+public enum cuisine:String{
     case wloska = "Wloska"
     case azjatycka = "Azjatycka"
     case polska = "Polska"
@@ -18,7 +18,7 @@ enum dieta{
     case miesna, weganska, wegetarianska
 }
 
-class Danie:Przepis{
+/*class Danie:Przepis{
     let cuisine:cuisine
     let dieta: dieta
     init(cuisine:cuisine,dieta:dieta,ProfilSmakowy: String, CzasPrzygotowania: Int, SposobPrzygotowania: String, Koszt: Int, listaskladnikow: [skladnik], NazwaPrzepisu: String, Autor: String?, Wstep: String?, Ocena: Int? = nil){
@@ -27,7 +27,7 @@ class Danie:Przepis{
         super.init(ProfilSmakowy: ProfilSmakowy, CzasPrzygotowania: CzasPrzygotowania, SposobPrzygotowania: SposobPrzygotowania, Koszt: Koszt, listaskladnikow: listaskladnikow, NazwaPrzepisu: NazwaPrzepisu, Autor: Autor, Wstep: Wstep)
     }
 }
-
+*/
 
 
 
