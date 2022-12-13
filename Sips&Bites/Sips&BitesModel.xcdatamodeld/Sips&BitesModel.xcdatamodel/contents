@@ -15,6 +15,6 @@
     </entity>
     <entity name="Skladnik" representedClassName="Skladnik" syncable="YES">
         <attribute name="nazwaSkladnika" optional="YES" attributeType="String"/>
-        <relationship name="danie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Danie" inverseName="skladniki" inverseEntity="Danie"/>
+        <relationship name="danie" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Danie" inverseName="skladniki" inverseEntity="Danie"/>
     </entity>
 </model>
