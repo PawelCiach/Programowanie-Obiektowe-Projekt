@@ -2,7 +2,7 @@
 //  Skladnik+CoreDataProperties.swift
 //  Sips&Bites
 //
-//  Created by Maciej Bichajło on 13/12/2022.
+//  Created by Paweł Ciach on 20/12/2022.
 //
 //
 
@@ -17,7 +17,25 @@ extension Skladnik {
     }
 
     @NSManaged public var nazwaSkladnika: String?
+    @NSManaged public var cocktail: NSSet?
     @NSManaged public var danie: NSSet?
+
+}
+
+// MARK: Generated accessors for cocktail
+extension Skladnik {
+
+    @objc(addCocktailObject:)
+    @NSManaged public func addToCocktail(_ value: Cocktail)
+
+    @objc(removeCocktailObject:)
+    @NSManaged public func removeFromCocktail(_ value: Cocktail)
+
+    @objc(addCocktail:)
+    @NSManaged public func addToCocktail(_ values: NSSet)
+
+    @objc(removeCocktail:)
+    @NSManaged public func removeFromCocktail(_ values: NSSet)
 
 }
 

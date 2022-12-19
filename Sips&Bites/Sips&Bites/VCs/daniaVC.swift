@@ -2,8 +2,6 @@
 import UIKit
 import CoreData
 
-
-
 class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
