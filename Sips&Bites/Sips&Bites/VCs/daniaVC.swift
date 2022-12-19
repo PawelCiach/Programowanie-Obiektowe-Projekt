@@ -15,7 +15,7 @@ class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "toDanieVC"){
             if let destvc = segue.destination as? danieVC{
-                destvc.activeDanie = sender as? Danie
+                destvc.danie = sender as? Danie
             }
         }
     }

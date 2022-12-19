@@ -3,7 +3,7 @@
     <entity name="Cocktail" representedClassName=".Cocktail" parentEntity="Przepis" syncable="YES"/>
     <entity name="Danie" representedClassName=".Danie" parentEntity="Przepis" syncable="YES">
         <attribute name="iloscSkladnikow" optional="YES" attributeType="Transformable" customClassName="[String]"/>
-        <relationship name="skladniki" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Skladnik" inverseName="danie" inverseEntity="Skladnik"/>
+        <relationship name="skladniki" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Skladnik" inverseName="danie" inverseEntity="Skladnik"/>
     </entity>
     <entity name="Przepis" representedClassName=".Przepis" isAbstract="YES" syncable="YES">
         <attribute name="czasPrzygotowania" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>

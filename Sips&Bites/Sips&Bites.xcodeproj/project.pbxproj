@@ -34,10 +34,10 @@
 		988DEB9E2917E7A000FEF727 /* skladnikClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988DEB9D2917E7A000FEF727 /* skladnikClass.swift */; };
 		988FDCD62916F4D3004F9470 /* QuestionableDesignChoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988FDCD52916F4D3004F9470 /* QuestionableDesignChoices.swift */; };
 		988FDCDA2916FE1A004F9470 /* PrzepisClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988FDCD92916FE1A004F9470 /* PrzepisClass.swift */; };
-		989986242948BF5E0050B1C8 /* Danie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989986202948BF5E0050B1C8 /* Danie+CoreDataClass.swift */; };
-		989986252948BF5E0050B1C8 /* Danie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989986212948BF5E0050B1C8 /* Danie+CoreDataProperties.swift */; };
 		989986262948BF5E0050B1C8 /* Skladnik+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989986222948BF5E0050B1C8 /* Skladnik+CoreDataClass.swift */; };
 		989986272948BF5E0050B1C8 /* Skladnik+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989986232948BF5E0050B1C8 /* Skladnik+CoreDataProperties.swift */; };
+		9899862A2949212C0050B1C8 /* Danie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989986282949212C0050B1C8 /* Danie+CoreDataClass.swift */; };
+		9899862B2949212C0050B1C8 /* Danie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989986292949212C0050B1C8 /* Danie+CoreDataProperties.swift */; };
 		98B576202947892C007B9EED /* skladnikCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5761F2947892C007B9EED /* skladnikCellModel.swift */; };
 		98DD74C529194BD3008F602E /* DanieClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DD74C429194BD3008F602E /* DanieClass.swift */; };
 		98DD74C729194CE5008F602E /* CocktailClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DD74C629194CE5008F602E /* CocktailClass.swift */; };
@@ -105,10 +105,10 @@
 		988DEB9D2917E7A000FEF727 /* skladnikClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skladnikClass.swift; sourceTree = "<group>"; };
 		988FDCD52916F4D3004F9470 /* QuestionableDesignChoices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionableDesignChoices.swift; sourceTree = "<group>"; };
 		988FDCD92916FE1A004F9470 /* PrzepisClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrzepisClass.swift; sourceTree = "<group>"; };
-		989986202948BF5E0050B1C8 /* Danie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Danie+CoreDataClass.swift"; sourceTree = "<group>"; };
-		989986212948BF5E0050B1C8 /* Danie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Danie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		989986222948BF5E0050B1C8 /* Skladnik+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Skladnik+CoreDataClass.swift"; sourceTree = "<group>"; };
 		989986232948BF5E0050B1C8 /* Skladnik+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Skladnik+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		989986282949212C0050B1C8 /* Danie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Danie+CoreDataClass.swift"; sourceTree = "<group>"; };
+		989986292949212C0050B1C8 /* Danie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Danie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		98B5761F2947892C007B9EED /* skladnikCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skladnikCellModel.swift; sourceTree = "<group>"; };
 		98DD74C429194BD3008F602E /* DanieClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanieClass.swift; sourceTree = "<group>"; };
 		98DD74C629194CE5008F602E /* CocktailClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailClass.swift; sourceTree = "<group>"; };
@@ -226,8 +226,8 @@
 		98899D7A2940E4AD00B5E9FE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				989986202948BF5E0050B1C8 /* Danie+CoreDataClass.swift */,
-				989986212948BF5E0050B1C8 /* Danie+CoreDataProperties.swift */,
+				989986282949212C0050B1C8 /* Danie+CoreDataClass.swift */,
+				989986292949212C0050B1C8 /* Danie+CoreDataProperties.swift */,
 				989986222948BF5E0050B1C8 /* Skladnik+CoreDataClass.swift */,
 				989986232948BF5E0050B1C8 /* Skladnik+CoreDataProperties.swift */,
 				98899D6E293E514700B5E9FE /* Cocktail+CoreDataClass.swift */,
@@ -388,6 +388,7 @@
 				01013F2B292271F100CE3D5E /* cocktailVC.swift in Sources */,
 				015EA7912906D77700CEEED1 /* AppDelegate.swift in Sources */,
 				988FDCDA2916FE1A004F9470 /* PrzepisClass.swift in Sources */,
+				9899862B2949212C0050B1C8 /* Danie+CoreDataProperties.swift in Sources */,
 				015EA7C32906E73000CEEED1 /* menuVC.swift in Sources */,
 				988DEB9E2917E7A000FEF727 /* skladnikClass.swift in Sources */,
 				98599BA72947848300D5245D /* skladnikCell.swift in Sources */,
@@ -397,12 +398,11 @@
 				015EA7932906D77700CEEED1 /* SceneDelegate.swift in Sources */,
 				989986262948BF5E0050B1C8 /* Skladnik+CoreDataClass.swift in Sources */,
 				015EA7C12906D7C500CEEED1 /* Sips&BitesVC.swift in Sources */,
-				989986242948BF5E0050B1C8 /* Danie+CoreDataClass.swift in Sources */,
-				989986252948BF5E0050B1C8 /* Danie+CoreDataProperties.swift in Sources */,
 				01013F29292271AB00CE3D5E /* danieVC.swift in Sources */,
 				98B576202947892C007B9EED /* skladnikCellModel.swift in Sources */,
 				98899D73293E514700B5E9FE /* Cocktail+CoreDataProperties.swift in Sources */,
 				98DD74C529194BD3008F602E /* DanieClass.swift in Sources */,
+				9899862A2949212C0050B1C8 /* Danie+CoreDataClass.swift in Sources */,
 				98899D8C2941269000B5E9FE /* newDanieVC.swift in Sources */,
 				988FDCD62916F4D3004F9470 /* QuestionableDesignChoices.swift in Sources */,
 				01A8B5D52907FEAD00FDE75E /* daniaVC.swift in Sources */,
