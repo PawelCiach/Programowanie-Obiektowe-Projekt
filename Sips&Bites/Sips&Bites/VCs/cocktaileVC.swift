@@ -1,14 +1,14 @@
 
-
 import UIKit
 import CoreData
 
 class cocktaileVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var cocktaile: [Cocktail] = []
    
     @IBOutlet weak var tableView: UITableView!
-    
-    @IBAction func unwind(_ seg:UIStoryboardSegue){
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "toCocktailVC"){
@@ -19,30 +19,24 @@ class cocktaileVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
         }
     }
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var cocktaile: [Cocktail] = []
-    
-    
-    
+    @IBAction func unwind(_ seg:UIStoryboardSegue){
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //create()
-        //delete()
-        //tableView.dataSource = self
-        //tableView.delegate = self
-        fetchCoctail()
+        fetchCocktail()
     }
     override func viewDidAppear(_ animated: Bool) {
-            fetchCoctail()
+            fetchCocktail()
         }
+    
     @IBAction func cocktailsCategoriesButton(_ sender: Any) {
         performSegue(withIdentifier: "toCocktailsCategories", sender: nil)
     }
     @IBAction func newCocktailButton(_ sender: Any) {
         performSegue(withIdentifier: "toNowyCocktail", sender: nil)
     }
-    func fetchCoctail(){
+    func fetchCocktail(){
         do{
             self.cocktaile = try context.fetch(Cocktail.fetchRequest())
             DispatchQueue.main.async {

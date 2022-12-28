@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G72" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Cocktail" representedClassName=".Cocktail" parentEntity="Przepis" syncable="YES"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Cocktail" representedClassName=".Cocktail" parentEntity="Przepis" syncable="YES">
+        <attribute name="iloscSkladnikow" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[String]"/>
+        <relationship name="skladniki" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Skladnik" inverseName="cocktail" inverseEntity="Skladnik"/>
+    </entity>
     <entity name="Danie" representedClassName=".Danie" parentEntity="Przepis" syncable="YES">
         <attribute name="iloscSkladnikow" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <relationship name="skladniki" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Skladnik" inverseName="danie" inverseEntity="Skladnik"/>
@@ -15,6 +18,7 @@
     </entity>
     <entity name="Skladnik" representedClassName="Skladnik" syncable="YES">
         <attribute name="nazwaSkladnika" optional="YES" attributeType="String"/>
+        <relationship name="cocktail" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cocktail" inverseName="skladniki" inverseEntity="Cocktail"/>
         <relationship name="danie" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Danie" inverseName="skladniki" inverseEntity="Danie"/>
     </entity>
 </model>

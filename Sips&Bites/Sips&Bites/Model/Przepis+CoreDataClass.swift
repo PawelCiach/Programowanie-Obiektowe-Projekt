@@ -2,14 +2,14 @@
 //  Przepis+CoreDataClass.swift
 //  Sips&Bites
 //
-//  Created by Maciej Bichajło on 05/12/2022.
+//  Created by Paweł Ciach on 20/12/2022.
 //
 //
 
 import Foundation
 import CoreData
 
-@objc(Przepis)
+
 public class Przepis: NSManagedObject {
 
 }

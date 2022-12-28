@@ -2,7 +2,7 @@
 //  Przepis+CoreDataProperties.swift
 //  Sips&Bites
 //
-//  Created by Maciej Bichajło on 05/12/2022.
+//  Created by Paweł Ciach on 20/12/2022.
 //
 //
 
@@ -16,11 +16,11 @@ extension Przepis {
         return NSFetchRequest<Przepis>(entityName: "Przepis")
     }
 
-    @NSManaged public var profilSmakowy: String?
     @NSManaged public var czasPrzygotowania: Int64
-    @NSManaged public var sposobPrzygotowania: String?
     @NSManaged public var koszt: Int64
     @NSManaged public var nazwaPrzepisu: String?
+    @NSManaged public var profilSmakowy: String?
+    @NSManaged public var sposobPrzygotowania: String?
     @NSManaged public var wstep: String?
 
 }
