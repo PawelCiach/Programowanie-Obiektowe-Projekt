@@ -39,7 +39,9 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         //print(danie?.iloscSkladnikow as Any)
         //print(danie?.skladniki as Any)
         skladniki=danie?.skladniki?.array as! [Skladnik]
+        print(skladniki.first?.danie as Any)
         nazwaD.text=danie?.nazwaPrzepisu ?? "Błąd"
+        
         //print(skladniki)
         
         
@@ -52,7 +54,10 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     {
         
     }
+    
 }
+
+
 
 extension danieVC:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

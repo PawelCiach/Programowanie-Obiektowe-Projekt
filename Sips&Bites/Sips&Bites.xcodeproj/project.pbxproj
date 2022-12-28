@@ -32,12 +32,14 @@
 		98899D79293E825800B5E9FE /* newCocktailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98899D78293E825800B5E9FE /* newCocktailVC.swift */; };
 		98899D8C2941269000B5E9FE /* newDanieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98899D8B2941269000B5E9FE /* newDanieVC.swift */; };
 		988DEB9E2917E7A000FEF727 /* skladnikClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988DEB9D2917E7A000FEF727 /* skladnikClass.swift */; };
+		988FBA41295BD4D80082E700 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 988FBA40295BD4D80082E700 /* .gitattributes */; };
 		988FDCD62916F4D3004F9470 /* QuestionableDesignChoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988FDCD52916F4D3004F9470 /* QuestionableDesignChoices.swift */; };
 		988FDCDA2916FE1A004F9470 /* PrzepisClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988FDCD92916FE1A004F9470 /* PrzepisClass.swift */; };
 		989986262948BF5E0050B1C8 /* Skladnik+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989986222948BF5E0050B1C8 /* Skladnik+CoreDataClass.swift */; };
 		989986272948BF5E0050B1C8 /* Skladnik+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989986232948BF5E0050B1C8 /* Skladnik+CoreDataProperties.swift */; };
 		9899862A2949212C0050B1C8 /* Danie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989986282949212C0050B1C8 /* Danie+CoreDataClass.swift */; };
 		9899862B2949212C0050B1C8 /* Danie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989986292949212C0050B1C8 /* Danie+CoreDataProperties.swift */; };
+		9899862D2950D8FC0050B1C8 /* DanieKategorieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9899862C2950D8FC0050B1C8 /* DanieKategorieVC.swift */; };
 		98B576202947892C007B9EED /* skladnikCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5761F2947892C007B9EED /* skladnikCellModel.swift */; };
 		98DD74C529194BD3008F602E /* DanieClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DD74C429194BD3008F602E /* DanieClass.swift */; };
 		98DD74C729194CE5008F602E /* CocktailClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DD74C629194CE5008F602E /* CocktailClass.swift */; };
@@ -103,12 +105,14 @@
 		98899D78293E825800B5E9FE /* newCocktailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newCocktailVC.swift; sourceTree = "<group>"; };
 		98899D8B2941269000B5E9FE /* newDanieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newDanieVC.swift; sourceTree = "<group>"; };
 		988DEB9D2917E7A000FEF727 /* skladnikClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skladnikClass.swift; sourceTree = "<group>"; };
+		988FBA40295BD4D80082E700 /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		988FDCD52916F4D3004F9470 /* QuestionableDesignChoices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionableDesignChoices.swift; sourceTree = "<group>"; };
 		988FDCD92916FE1A004F9470 /* PrzepisClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrzepisClass.swift; sourceTree = "<group>"; };
 		989986222948BF5E0050B1C8 /* Skladnik+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Skladnik+CoreDataClass.swift"; sourceTree = "<group>"; };
 		989986232948BF5E0050B1C8 /* Skladnik+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Skladnik+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		989986282949212C0050B1C8 /* Danie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Danie+CoreDataClass.swift"; sourceTree = "<group>"; };
 		989986292949212C0050B1C8 /* Danie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Danie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9899862C2950D8FC0050B1C8 /* DanieKategorieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanieKategorieVC.swift; sourceTree = "<group>"; };
 		98B5761F2947892C007B9EED /* skladnikCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skladnikCellModel.swift; sourceTree = "<group>"; };
 		98DD74C429194BD3008F602E /* DanieClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanieClass.swift; sourceTree = "<group>"; };
 		98DD74C629194CE5008F602E /* CocktailClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailClass.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 		015EA7842906D77600CEEED1 = {
 			isa = PBXGroup;
 			children = (
+				988FBA40295BD4D80082E700 /* .gitattributes */,
 				98899D48293E4E6500B5E9FE /* Sips&BitesModel.xcdatamodeld */,
 				015EA78F2906D77700CEEED1 /* Sips&Bites */,
 				015EA7A62906D77900CEEED1 /* Sips&BitesTests */,
@@ -213,6 +218,7 @@
 			children = (
 				015EA7C22906E73000CEEED1 /* menuVC.swift */,
 				01A8B5D42907FEAC00FDE75E /* daniaVC.swift */,
+				9899862C2950D8FC0050B1C8 /* DanieKategorieVC.swift */,
 				01A8B5D62907FEBE00FDE75E /* cocktaileVC.swift */,
 				01A8B5D82907FED600FDE75E /* userVC.swift */,
 				98899D8B2941269000B5E9FE /* newDanieVC.swift */,
@@ -355,6 +361,7 @@
 				015EA79D2906D77800CEEED1 /* LaunchScreen.storyboard in Resources */,
 				015EA79A2906D77800CEEED1 /* Assets.xcassets in Resources */,
 				015EA7982906D77700CEEED1 /* Main.storyboard in Resources */,
+				988FBA41295BD4D80082E700 /* .gitattributes in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +389,7 @@
 				01A8B5D72907FEBE00FDE75E /* cocktaileVC.swift in Sources */,
 				98899D79293E825800B5E9FE /* newCocktailVC.swift in Sources */,
 				98899D4A293E4E6500B5E9FE /* Sips&BitesModel.xcdatamodeld in Sources */,
+				9899862D2950D8FC0050B1C8 /* DanieKategorieVC.swift in Sources */,
 				01A8B5D92907FED600FDE75E /* userVC.swift in Sources */,
 				98899D74293E514700B5E9FE /* Przepis+CoreDataClass.swift in Sources */,
 				98DD74C729194CE5008F602E /* CocktailClass.swift in Sources */,

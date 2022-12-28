@@ -19,7 +19,7 @@ class newDanieVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegat
         noweDanie.iloscSkladnikow=ilosciSkl
         for skladnik in skladnikiAkt{
             noweDanie.addToSkladniki(skladnik)
-            skladnik.addToDanie(noweDanie)
+            //skladnik.addToDanie(noweDanie)
         }
         noweDanie.nazwaPrzepisu=nazwaDania.text
         
@@ -214,6 +214,7 @@ class newDanieVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegat
 
     
     func alertSkladnik(with skladnik:Skladnik){
+        
         let alert = UIAlertController(title: "Podaj ilosc", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Nieważne", style: .cancel,handler: {action in
             self.collectionView.reloadData()

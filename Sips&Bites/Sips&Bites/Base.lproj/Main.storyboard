@@ -266,6 +266,17 @@
                                     <action selector="newDanieButton:" destination="1Nq-ea-yhV" eventType="touchUpInside" id="7pI-qj-V1l"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoV-Td-lUV">
+                                <rect key="frame" x="296" y="284" width="107" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Wyczyść filtry ">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="clearTapped:" destination="1Nq-ea-yhV" eventType="touchUpInside" id="p6k-sE-xSp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9z9-Bg-hQZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -496,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fY-mC-caf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2203" y="200"/>
+            <point key="canvasLocation" x="2202.898550724638" y="199.55357142857142"/>
         </scene>
         <!--UserVC-->
         <scene sceneID="Lju-Xc-vNH">
@@ -828,28 +839,59 @@
             </objects>
             <point key="canvasLocation" x="2071.0144927536235" y="-1607.1428571428571"/>
         </scene>
-        <!--Dania Categories-->
+        <!--Danie KategorieVC-->
         <scene sceneID="eEk-1R-EpN">
             <objects>
-                <viewController id="aO8-mO-RdK" customClass="daniaCategories" sceneMemberID="viewController">
+                <viewController id="aO8-mO-RdK" customClass="DanieKategorieVC" customModule="Sips_Bites" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KNx-BL-m6r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tu bedą kategorie wyboru dań" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4T-gW-AfG">
-                                <rect key="frame" x="76.5" y="407" width="261" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OBe-XO-0by">
+                                <rect key="frame" x="0.0" y="48" width="414" height="244"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="filterSkladnikiCell" id="yuR-o3-giT">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yuR-o3-giT" id="mMP-SG-eLh">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sr6-Q3-qFm">
+                                <rect key="frame" x="20" y="690" width="374" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="SEc-8H-M2C"/>
+                                    <constraint firstAttribute="width" constant="374" id="cx2-up-cpV"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Filtruj">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="filtrujTapped:" destination="aO8-mO-RdK" eventType="touchUpInside" id="QpY-bu-iiQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zzm-TZ-Aln"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="n4T-gW-AfG" firstAttribute="centerX" secondItem="KNx-BL-m6r" secondAttribute="centerX" id="3Ld-HW-VqP"/>
-                            <constraint firstItem="n4T-gW-AfG" firstAttribute="centerY" secondItem="KNx-BL-m6r" secondAttribute="centerY" id="E5C-y7-EUC"/>
+                            <constraint firstItem="OBe-XO-0by" firstAttribute="trailing" secondItem="Zzm-TZ-Aln" secondAttribute="trailing" id="31C-BI-6kS"/>
+                            <constraint firstItem="Sr6-Q3-qFm" firstAttribute="top" secondItem="OBe-XO-0by" secondAttribute="bottom" constant="398" id="BwX-ja-him"/>
+                            <constraint firstItem="Zzm-TZ-Aln" firstAttribute="bottom" secondItem="Sr6-Q3-qFm" secondAttribute="bottom" constant="95" id="JSy-ux-HSI"/>
+                            <constraint firstItem="Zzm-TZ-Aln" firstAttribute="trailing" secondItem="Sr6-Q3-qFm" secondAttribute="trailing" constant="20" id="aKn-6W-4Nj"/>
+                            <constraint firstItem="Sr6-Q3-qFm" firstAttribute="top" secondItem="OBe-XO-0by" secondAttribute="bottom" constant="398" id="hRA-Tn-M2S"/>
+                            <constraint firstItem="Sr6-Q3-qFm" firstAttribute="leading" secondItem="Zzm-TZ-Aln" secondAttribute="leading" constant="20" id="jEz-1y-R7R"/>
+                            <constraint firstItem="OBe-XO-0by" firstAttribute="leading" secondItem="Zzm-TZ-Aln" secondAttribute="leading" id="jYP-GK-ybf"/>
+                            <constraint firstItem="OBe-XO-0by" firstAttribute="top" secondItem="Zzm-TZ-Aln" secondAttribute="top" id="xO5-mh-9aN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView1" destination="OBe-XO-0by" id="T0A-FI-SiN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zB1-hN-QCU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
