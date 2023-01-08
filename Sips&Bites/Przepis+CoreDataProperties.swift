@@ -22,7 +22,7 @@ extension Przepis {
     @NSManaged public var profilSmakowy: String?
     @NSManaged public var sposobPrzygotowania: String?
     @NSManaged public var wstep: String?
-    @NSManaged public var autor: User?
+    @NSManaged public var autor: Uzytkownik?
     @NSManaged public var ulubione: NSSet?
 
 }
@@ -31,10 +31,10 @@ extension Przepis {
 extension Przepis {
 
     @objc(addUlubioneObject:)
-    @NSManaged public func addToUlubione(_ value: User)
+    @NSManaged public func addToUlubione(_ value: Uzytkownik)
 
     @objc(removeUlubioneObject:)
-    @NSManaged public func removeFromUlubione(_ value: User)
+    @NSManaged public func removeFromUlubione(_ value: Uzytkownik)
 
     @objc(addUlubione:)
     @NSManaged public func addToUlubione(_ values: NSSet)
