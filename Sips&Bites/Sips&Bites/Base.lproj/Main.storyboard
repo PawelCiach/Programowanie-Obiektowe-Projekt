@@ -626,7 +626,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oldFashioned" translatesAutoresizingMaskIntoConstraints="NO" id="Lwu-OV-cq8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lwu-OV-cq8">
                                 <rect key="frame" x="47" y="142" width="320" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="Oot-xO-Sqr"/>
@@ -1183,7 +1183,6 @@
         <image name="arrowtriangle.down.square" catalog="system" width="128" height="114"/>
         <image name="fork.knife" catalog="system" width="94" height="128"/>
         <image name="list.bullet.circle" catalog="system" width="128" height="123"/>
-        <image name="oldFashioned" width="286" height="176"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.circle" catalog="system" width="128" height="123"/>
