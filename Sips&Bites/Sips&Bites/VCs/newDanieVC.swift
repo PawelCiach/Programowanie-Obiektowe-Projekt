@@ -25,7 +25,13 @@ class newDanieVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegat
         noweDanie.koszt=koszt ?? 0
         noweDanie.czasPrzygotowania=czas ?? 0
         noweDanie.profilSmakowy=profil.text ?? ""
-        
+        noweDanie.sposobPrzygotowania=self.metoda.text
+        if(noweDanie.profilSmakowy=="Profil smakowy"){
+            noweDanie.profilSmakowy=nil
+        }
+        if (us.isEmpty==false){
+            noweDanie.autor=us[0]
+        }
         do{
             try self.context.save()
         }
@@ -127,7 +133,16 @@ class newDanieVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegat
         
         return cell
     }
+    //MARK: -  fetch requests
+    func fetchUser(){
+        do{
+            self.us=try context.fetch(Uzytkownik.fetchRequest())
+        }catch{
+            
+        }
+    }
     
+
     func fetchSkladniki(){
         do{
             self.wszystkieSkl=try context.fetch(Skladnik.fetchRequest())
@@ -153,6 +168,9 @@ class newDanieVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegat
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     //MARK: - Tablice i zmiene
+    var us:[Uzytkownik]=[]
+    var user:Uzytkownik?
+    
     
     var skladnikiAkt:[Skladnik]=[]
     
@@ -189,7 +207,7 @@ class newDanieVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegat
         tableView.isHidden=true
         searchBar.delegate=self
         metoda.delegate=self
-        
+        fetchUser()
         fetchSkladniki()
         print(wszystkieSkl)
         collectionView.isHidden=false

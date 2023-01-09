@@ -2,14 +2,19 @@
 import UIKit
 import CoreData
 
-class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITextViewDelegate {
     
     
     
-    
+    //MARK: - Outlets and actions
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var nazwaD: UILabel!
+    @IBOutlet weak var kosztLabel: UILabel!
+    @IBOutlet weak var czasLabel: UILabel!
+    @IBOutlet weak var profilLabel: UILabel!
+    @IBOutlet weak var autorLabel: UILabel!
+    
+    @IBOutlet weak var textView: UITextView!
     
     @IBAction func trashTapped(_ sender: Any) {
         self.context.delete(danie!)
@@ -36,12 +41,29 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         super.viewDidLoad()
         collectionView.delegate=self
         collectionView.dataSource=self
+        textView.delegate=self
+        configureTextView()
+        textView.text=danie?.sposobPrzygotowania ?? "Błąd"
         //print(danie?.iloscSkladnikow as Any)
         //print(danie?.skladniki as Any)
         skladniki=danie?.skladniki?.array as! [Skladnik]
         print(skladniki.first?.danie as Any)
         nazwaD.text=danie?.nazwaPrzepisu ?? "Błąd"
+        kosztLabel.text="Koszt: \(danie?.koszt ?? 0) złotych"
         
+        if let czas=danie?.czasPrzygotowania{
+            czasLabel.text="Czas przygotowania: \(czas) min"
+        }else{
+            czasLabel.text="Czas przygotowania niepodany"
+        }
+        
+        profilLabel.text=danie?.profilSmakowy ?? "Profil niepodany"
+        
+        if let imie=danie!.autor?.imie,let nazwisko=danie?.autor?.nazwisko{
+            autorLabel.text=imie+" "+nazwisko
+        }else{
+            autorLabel.text="Autor niepodany"
+        }
         //print(skladniki)
         
         
@@ -50,8 +72,10 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
    
     
     
-    func fetchSkladniki()
-    {
+    func configureTextView(){
+        textView.layer.borderWidth=2
+        textView.layer.borderColor=UIColor.lightGray.cgColor
+        textView.layer.cornerRadius=5
         
     }
     

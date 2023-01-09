@@ -326,7 +326,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ObT-AA-iVb">
-                                                <rect key="frame" x="20" y="64" width="374" height="244"/>
+                                                <rect key="frame" x="20" y="175" width="374" height="244"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="374" id="Paf-fN-fGC"/>
@@ -364,13 +364,49 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgY-o7-9Nv">
+                                                <rect key="frame" x="20" y="110" width="126" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fP5-Tk-XTz">
+                                                <rect key="frame" x="20" y="146" width="191" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKV-mn-0dL">
+                                                <rect key="frame" x="231" y="146" width="158" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pg8-8l-HdM">
+                                                <rect key="frame" x="20" y="546" width="374" height="538"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1Z-57-Vas">
+                                                <rect key="frame" x="256" y="1121" width="133" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="1aE-H6-7Ir" firstAttribute="leading" secondItem="g8g-eZ-cff" secondAttribute="leading" constant="20" id="51n-4N-lwD"/>
+                                            <constraint firstItem="ObT-AA-iVb" firstAttribute="top" secondItem="g8g-eZ-cff" secondAttribute="top" constant="175" id="6yb-6g-doP"/>
                                             <constraint firstItem="1aE-H6-7Ir" firstAttribute="top" secondItem="g8g-eZ-cff" secondAttribute="top" id="CaB-ZY-s9o"/>
                                             <constraint firstAttribute="height" constant="1200" id="LPV-nj-un8"/>
-                                            <constraint firstItem="ObT-AA-iVb" firstAttribute="top" secondItem="1aE-H6-7Ir" secondAttribute="bottom" constant="25.5" id="MTX-UL-xaw"/>
                                             <constraint firstItem="ObT-AA-iVb" firstAttribute="leading" secondItem="g8g-eZ-cff" secondAttribute="leading" constant="20" id="QUB-hU-xwW"/>
                                             <constraint firstAttribute="trailing" secondItem="1aE-H6-7Ir" secondAttribute="trailing" constant="20" id="YpT-c8-fpn"/>
                                             <constraint firstAttribute="trailing" secondItem="ObT-AA-iVb" secondAttribute="trailing" constant="20" id="c0a-Sq-n0w"/>
@@ -405,8 +441,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="autorLabel" destination="e1Z-57-Vas" id="BcT-Js-xR4"/>
                         <outlet property="collectionView" destination="ObT-AA-iVb" id="GKh-xT-bg1"/>
+                        <outlet property="czasLabel" destination="fP5-Tk-XTz" id="bZ5-pZ-cYg"/>
+                        <outlet property="kosztLabel" destination="jgY-o7-9Nv" id="fSe-bT-1cY"/>
                         <outlet property="nazwaD" destination="1aE-H6-7Ir" id="4tC-5h-pz7"/>
+                        <outlet property="profilLabel" destination="ZKV-mn-0dL" id="FHd-aB-VII"/>
+                        <outlet property="textView" destination="Pg8-8l-HdM" id="E2e-PG-xHP"/>
                         <segue destination="GMM-6F-SZu" kind="unwind" identifier="backToDaniaVC" unwindAction="unwind:" id="2q1-QE-LMa"/>
                     </connections>
                 </viewController>
@@ -529,16 +570,25 @@
                                 <rect key="frame" x="41.5" y="387" width="331" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="imieEditingEnd:" destination="poD-xn-LhI" eventType="editingDidEnd" id="3rl-Jc-IhV"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nazwisko" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TzX-ST-CJR">
                                 <rect key="frame" x="41.5" y="431" width="331" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nazwiskoEditEnd:" destination="poD-xn-LhI" eventType="editingDidEnd" id="mV2-0w-Mss"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rola" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lTK-Ul-866">
                                 <rect key="frame" x="41.5" y="475" width="331" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="rolaEditEnd:" destination="poD-xn-LhI" eventType="editingDidEnd" id="WYR-Wy-dsN"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jFc-Z4-TeF"/>
@@ -558,6 +608,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qT4-JC-2yU"/>
+                    <connections>
+                        <outlet property="imieField" destination="fTQ-Wt-JWX" id="79Y-KS-qnd"/>
+                        <outlet property="nazwiskoField" destination="TzX-ST-CJR" id="Hj4-aN-uGL"/>
+                        <outlet property="rolaField" destination="lTK-Ul-866" id="WB2-pm-3ov"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxz-Pe-d8N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

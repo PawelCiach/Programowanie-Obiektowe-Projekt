@@ -141,7 +141,7 @@ class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filt
     @IBAction func newDanieButton(_ sender: Any) {
         performSegue(withIdentifier: "toNoweDanie", sender: nil)
     }
-    
+    //MARK: - Fetch requests
     func fetchDanie(){
         do{
             self.dania = try context.fetch(Danie.fetchRequest())
