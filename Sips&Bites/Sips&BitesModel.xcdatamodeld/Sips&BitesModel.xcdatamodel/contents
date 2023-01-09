@@ -23,7 +23,7 @@
         <relationship name="cocktail" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cocktail" inverseName="skladniki" inverseEntity="Cocktail"/>
         <relationship name="danie" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Danie" inverseName="skladniki" inverseEntity="Danie"/>
     </entity>
-    <entity name="Uzytkownik" representedClassName="Uzytkownik" syncable="YES" codeGenerationType="class">
+    <entity name="Uzytkownik" representedClassName="Uzytkownik" syncable="YES">
         <attribute name="imie" optional="YES" attributeType="String"/>
         <attribute name="nazwisko" optional="YES" attributeType="String"/>
         <attribute name="rola" optional="YES" attributeType="String"/>

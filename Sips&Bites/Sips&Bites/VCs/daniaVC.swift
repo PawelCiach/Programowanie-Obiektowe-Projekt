@@ -4,12 +4,61 @@ import CoreData
 
 
 
+public enum sortType{
+    case czasUp
+    case czasDown
+    case cenaUp
+    case cenaDown
+}
+
+
+
 class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filtr{
+    func sortujDania(_ sortBy: sortType) {
+        switch sortBy {
+        case .cenaUp:
+            dania.sort{
+                $0.koszt<$1.koszt
+            }
+            daniaFiltr.sort{
+                $0.koszt<$1.koszt
+            }
+        case .cenaDown:
+            dania.sort{
+                $0.koszt>$1.koszt
+            }
+            daniaFiltr.sort{
+                $0.koszt>$1.koszt
+            }
+        case .czasUp:
+            dania.sort{
+                $0.czasPrzygotowania<$1.czasPrzygotowania
+            }
+            daniaFiltr.sort{
+                $0.czasPrzygotowania<$1.czasPrzygotowania
+            }
+        case .czasDown:
+            dania.sort{
+                $0.czasPrzygotowania>$1.czasPrzygotowania
+            }
+            daniaFiltr.sort{
+                $0.czasPrzygotowania>$1.czasPrzygotowania
+            }
+           
+        
+        }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     
     
    
     @IBAction func clearTapped(_ sender: Any) {
         ifSorted=false
+        daniaFiltr=[]
+        dania.shuffle()
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -17,25 +66,27 @@ class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filt
     
     func filtrSkladnik(_ skladniki: [Skladnik]) {
         skladnikiFiltr=skladniki
-        
-        var tab:[Danie]=[]
-        print (skladnikiFiltr as Any )
-        for skladnik in skladniki {
-            tab=skladnik.danie?.allObjects as! [Danie]
-            if #available(iOS 16.0, *) {
-                if daniaFiltr.contains(tab){
+        if (skladnikiFiltr?.isEmpty==false){
+            var tab:[Danie]=[]
+            print (skladnikiFiltr as Any )
+            for skladnik in skladniki {
+                tab=skladnik.danie?.allObjects as! [Danie]
+                if #available(iOS 16.0, *) {
+                    if daniaFiltr.contains(tab){
+                        
+                    }else{
+                        daniaFiltr.append(contentsOf: tab)
+                    }
+                } else {
                     
-                }else{
-                    daniaFiltr.append(contentsOf: tab)
                 }
-            } else {
-                
+            }
+            ifSorted=true
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
-        ifSorted=true
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        
         print (daniaFiltr)
     }
     

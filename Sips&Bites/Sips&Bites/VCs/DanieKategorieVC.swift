@@ -10,7 +10,7 @@ import CoreData
 
 protocol Filtr:AnyObject{
     func filtrSkladnik(_ skladniki:[Skladnik])
-    
+    func sortujDania(_ sortBy:sortType)
     
 }
 
@@ -63,6 +63,12 @@ class DanieKategorieVC:
         delegate?.filtrSkladnik(skladnikiFilt)
         dismiss(animated: true)        //performSegue(withIdentifier: "backToDaniaVC", sender: skladnikiFilt)
     }
+    //MARK: - Outlets
+    
+    @IBOutlet weak var sortButton: UIButton!
+    
+
+    
     
     @IBOutlet weak var tableView1: UITableView!
     weak var delegate: Filtr?
@@ -77,14 +83,15 @@ class DanieKategorieVC:
     
     var skladnikiAll:[Skladnik]=[]
     var skladnikiFilt:[Skladnik]=[]
-    
+    //var profileAll:[]
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView1.dataSource=self
         tableView1.delegate=self
         self.tableView1.allowsMultipleSelection=true
         fetchSkladniki()
-
+        menuSetup()
+        sortButton.setTitle("Sortowanie", for: .normal)
         // Do any additional setup after loading the view.
     }
     
@@ -102,7 +109,40 @@ class DanieKategorieVC:
     
 
   
-
+    //MARK: - sort menu
+    func menuSetup(){
+        let cenaup = UIAction(title: "Cena rosnąco", attributes: []){ action in
+            self.delegate?.sortujDania(.cenaUp)
+        }
+        let cenadown = UIAction(title: "Cena malejąco", attributes: []){ action in
+            self.delegate?.sortujDania(.cenaDown)
+        }
+        let czasup = UIAction(title: "Czas przygotowania rosnąco", attributes: []){ action in
+            self.delegate?.sortujDania(.czasUp)
+            
+        }
+        let czasdown = UIAction(title: "Czas przygotowania malejąco", attributes: []){ action in
+            self.delegate?.sortujDania(.czasDown)
+        }
+        let rodzajesortowania:[UIAction]=[cenaup,cenadown,czasup,czasdown]
+        
+        let menu = UIMenu(title: "Sortuj po:", children: rodzajesortowania)
+        sortButton.showsMenuAsPrimaryAction=true
+        if #available(iOS 15.0, *) {
+           // sortButton.changesSelectionAsPrimaryAction=true
+        } else {
+            // Fallback on earlier versions
+        }
+    
+        sortButton.menu=menu
+    }
+    
+    
 }
+
+
+
+
+
 
 

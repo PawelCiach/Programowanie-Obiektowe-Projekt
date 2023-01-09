@@ -22,6 +22,9 @@ class newDanieVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegat
             //skladnik.addToDanie(noweDanie)
         }
         noweDanie.nazwaPrzepisu=nazwaDania.text
+        noweDanie.koszt=koszt ?? 0
+        noweDanie.czasPrzygotowania=czas ?? 0
+        noweDanie.profilSmakowy=profil.text ?? ""
         
         do{
             try self.context.save()
@@ -37,6 +40,27 @@ class newDanieVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegat
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    
+    @IBOutlet weak var czasField: UITextField!
+    
+    
+    @IBAction func czas(_ sender: Any) {
+        self.czas=Int64(czasField.text ?? "0") ?? 0
+    }
+    
+    
+    @IBOutlet weak var profil: UITextField!
+    
+    
+  
+    
+    
+    @IBOutlet weak var kosztField: UITextField!
+    
+    @IBAction func koszt(_ sender: Any) {
+        self.koszt=Int64(kosztField.text ?? "0") ?? 0
+    }
     
     
     @IBAction func addSkladnikTapped(_ sender: Any) {
@@ -128,7 +152,7 @@ class newDanieVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegat
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    //MARK: - Tablice
+    //MARK: - Tablice i zmiene
     
     var skladnikiAkt:[Skladnik]=[]
     
@@ -138,7 +162,9 @@ class newDanieVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegat
     var searching=false
     
     var ilosciSkl:[String]=[]
-    
+    var koszt:Int64?
+    var czas:Int64?
+    var profilSmakowy:String?
 
     @IBOutlet weak var nazwaDania: UITextField!
     
@@ -163,6 +189,7 @@ class newDanieVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegat
         tableView.isHidden=true
         searchBar.delegate=self
         metoda.delegate=self
+        
         fetchSkladniki()
         print(wszystkieSkl)
         collectionView.isHidden=false
@@ -175,9 +202,12 @@ class newDanieVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegat
   
     @objc func tap(_ sender:UITapGestureRecognizer){
         view.endEditing(true)
+        //tableView.isHidden=true
     }
     
     //MARK: - search bar
+    
+    
     
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -193,11 +223,12 @@ class newDanieVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegat
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.showsCancelButton=false
+        
         searching=false
         tableView.isHidden=true
         searchBar.text=""
         searchBar.resignFirstResponder()
+        searchBar.showsCancelButton=false
     }
     
     

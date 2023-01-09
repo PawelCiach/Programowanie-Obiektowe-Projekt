@@ -653,6 +653,30 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSP-hi-KKc">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                                         <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Profil smakowy" borderStyle="roundedRect" placeholder="Podaj profil smakowy przepisu" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mzW-Ox-aJd">
+                                                <rect key="frame" x="43" y="520" width="347" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Koszt w PLN" borderStyle="roundedRect" placeholder="Podaj koszt w złotówkach" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1JS-Ch-zr5">
+                                                <rect key="frame" x="20" y="583" width="153" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <connections>
+                                                    <action selector="koszt:" destination="eT3-oy-aDm" eventType="editingDidEnd" id="PbZ-ra-oKN"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Czas w minutach" borderStyle="roundedRect" placeholder="Podaj czas w minutach" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SNO-S2-T0w">
+                                                <rect key="frame" x="257" y="583" width="153" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="czas:" destination="eT3-oy-aDm" eventType="editingDidEnd" id="xPC-7n-m44"/>
+                                                </connections>
+                                            </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dodaj własny przepis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFX-Er-yW3">
                                                 <rect key="frame" x="43" y="0.0" width="327" height="54"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -822,8 +846,11 @@
                     <navigationItem key="navigationItem" id="YdU-z9-YJI"/>
                     <connections>
                         <outlet property="collectionView" destination="KHR-ns-86c" id="ghJ-5E-Pp9"/>
+                        <outlet property="czasField" destination="SNO-S2-T0w" id="dTY-9f-4BK"/>
+                        <outlet property="kosztField" destination="1JS-Ch-zr5" id="MB1-Sv-n9i"/>
                         <outlet property="metoda" destination="gtS-BA-nTI" id="8Sj-BR-cnu"/>
                         <outlet property="nazwaDania" destination="veK-ql-Rmq" id="Llb-0z-e17"/>
+                        <outlet property="profil" destination="mzW-Ox-aJd" id="PCS-Om-yaR"/>
                         <outlet property="searchBar" destination="fV6-gt-VS3" id="SL9-tc-ZZI"/>
                         <outlet property="tableView" destination="BIn-uk-IIo" id="Kz6-uP-yXx"/>
                     </connections>
@@ -831,7 +858,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jtG-AF-ZYb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="5Xr-6a-xAd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2072" y="-1647"/>
+            <point key="canvasLocation" x="2071.0144927536235" y="-1647.3214285714284"/>
         </scene>
         <!--Danie KategorieVC-->
         <scene sceneID="eEk-1R-EpN">
@@ -869,6 +896,14 @@
                                     <action selector="filtrujTapped:" destination="aO8-mO-RdK" eventType="touchUpInside" id="QpY-bu-iiQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtK-0y-awR">
+                                <rect key="frame" x="83" y="336" width="248" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="arrowtriangle.down.square" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="tinted" imagePlacement="trailing" title="Sortuj" imagePadding="130" titleAlignment="leading">
+                                    <imageReference key="image" image="arrow.down.app.fill" catalog="system" symbolScale="large" variableValue="0.0"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zzm-TZ-Aln"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -884,6 +919,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="sortButton" destination="JtK-0y-awR" id="i07-7K-rXO"/>
                         <outlet property="tableView1" destination="OBe-XO-0by" id="T0A-FI-SiN"/>
                     </connections>
                 </viewController>
@@ -1087,7 +1123,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.down.app.fill" catalog="system" width="128" height="114"/>
         <image name="arrow.left" catalog="system" width="128" height="95"/>
+        <image name="arrowtriangle.down.square" catalog="system" width="128" height="114"/>
         <image name="fork.knife" catalog="system" width="94" height="128"/>
         <image name="list.bullet.circle" catalog="system" width="128" height="123"/>
         <image name="oldFashioned" width="286" height="176"/>
