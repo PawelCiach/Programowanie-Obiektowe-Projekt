@@ -6,13 +6,15 @@
 //
 
 import UIKit
-
+import CoreData
 
 class Sips_BitesVC: UIViewController {
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     @IBAction func buttonTapped(_ sender: Any){

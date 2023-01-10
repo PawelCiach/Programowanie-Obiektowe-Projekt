@@ -40,6 +40,7 @@ class userVC: UIViewController {
             save()
         }
         fetchUser()
+        
         currentuser=us![0]
         imieField.text=currentuser?.imie
         nazwiskoField.text=currentuser?.nazwisko

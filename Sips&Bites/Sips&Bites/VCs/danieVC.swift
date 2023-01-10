@@ -2,6 +2,12 @@
 import UIKit
 import CoreData
 
+enum likedState{
+    case liked
+    case notliked
+}
+
+
 class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITextViewDelegate {
     
     
@@ -14,7 +20,27 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     @IBOutlet weak var profilLabel: UILabel!
     @IBOutlet weak var autorLabel: UILabel!
     
+    @IBOutlet weak var likeButton: UIButton!
+    
     @IBOutlet weak var textView: UITextView!
+    
+    @IBAction func likeTapped(_ sender: Any) {
+        switch likeState {
+        case .notliked:
+            self.setLiked(sender as! UIButton)
+            users[0].addToUlubione(danie!)
+        case .liked:
+            self.setUnliked(sender as! UIButton)
+            users[0].removeFromUlubione(danie!)
+        case .none:
+            print ("error")
+        }
+        do{
+            try context.save()
+        }catch{
+            
+        }
+    }
     
     @IBAction func trashTapped(_ sender: Any) {
         self.context.delete(danie!)
@@ -32,13 +58,15 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     
 
 
-   
-    
+    var users:[Uzytkownik]=[]
+    var danieLiked:Bool?
+    var likeState:likedState?
     var danie: Danie?
     var skladniki:[Skladnik]=[]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchUser()
         collectionView.delegate=self
         collectionView.dataSource=self
         textView.delegate=self
@@ -64,13 +92,58 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         }else{
             autorLabel.text="Autor niepodany"
         }
+        if (users.isEmpty==false){
+            danieLiked=users[0].ulubione?.contains(danie as Any)
+        }
+        switch danieLiked {
+        case true:
+            setLiked(likeButton)
+        case false:
+            setUnliked(likeButton)
+        case .none:
+            setUnliked(likeButton)
+        case .some(_):
+            setUnliked(likeButton)
+        }
+        
+        
         //print(skladniki)
         
         
         
     }
    
+    //MARK: - funkcje pomocnicze
     
+    
+    func setLiked(_ sender: UIButton){
+        UIButton.animate(withDuration: 0.2, animations: {
+            sender.transform=CGAffineTransform(scaleX: 0.975, y: 0.96)
+        },
+        completion: {finish in
+            UIButton.animate(withDuration: 0.2, animations: {
+                sender.transform=CGAffineTransform.identity
+                
+            })
+        })
+        sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        likeState = .liked
+        print(sender.currentImage)
+    }
+    
+    func setUnliked(_ sender: UIButton){
+        UIButton.animate(withDuration: 0.2, animations: {
+            sender.transform=CGAffineTransform(scaleX: 0.975, y: 0.96)
+        },
+        completion: {finish in
+            UIButton.animate(withDuration: 0.2, animations: {
+                sender.transform=CGAffineTransform.identity
+                
+            })
+        })
+        sender.setImage(UIImage(systemName: "heart"), for: .normal)
+        likeState = .notliked
+    }
     
     func configureTextView(){
         textView.layer.borderWidth=2
@@ -79,6 +152,16 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         
     }
     
+    
+    //MARK:  - fetch requests
+    
+    func fetchUser(){
+        do{
+            self.users=try context.fetch(Uzytkownik.fetchRequest())
+        }catch{
+            
+        }
+    }
 }
 
 

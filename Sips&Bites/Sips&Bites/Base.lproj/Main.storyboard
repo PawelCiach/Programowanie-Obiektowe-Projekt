@@ -400,6 +400,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meX-h5-UvO">
+                                                <rect key="frame" x="32" y="453" width="95" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="likeTapped:" destination="mnh-QK-1Ru" eventType="touchUpInside" id="3a9-mf-ahN"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -445,6 +453,7 @@
                         <outlet property="collectionView" destination="ObT-AA-iVb" id="GKh-xT-bg1"/>
                         <outlet property="czasLabel" destination="fP5-Tk-XTz" id="bZ5-pZ-cYg"/>
                         <outlet property="kosztLabel" destination="jgY-o7-9Nv" id="fSe-bT-1cY"/>
+                        <outlet property="likeButton" destination="meX-h5-UvO" id="647-BV-xgT"/>
                         <outlet property="nazwaD" destination="1aE-H6-7Ir" id="4tC-5h-pz7"/>
                         <outlet property="profilLabel" destination="ZKV-mn-0dL" id="FHd-aB-VII"/>
                         <outlet property="textView" destination="Pg8-8l-HdM" id="E2e-PG-xHP"/>

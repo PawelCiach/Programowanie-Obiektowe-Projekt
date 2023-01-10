@@ -38,6 +38,7 @@ class newDanieVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegat
         catch{
             let alert=UIAlertController(title: "Błąd", message: "Błąd zapisu", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+
         }
         performSegue(withIdentifier: "backToDaniaVC", sender: self)
         
