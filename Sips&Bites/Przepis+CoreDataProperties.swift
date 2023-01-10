@@ -2,7 +2,7 @@
 //  Przepis+CoreDataProperties.swift
 //  Sips&Bites
 //
-//  Created by Maciej Bichajło on 28/12/2022.
+//  Created by Maciej Bichajło on 10/01/2023.
 //
 //
 
@@ -22,6 +22,7 @@ extension Przepis {
     @NSManaged public var profilSmakowy: String?
     @NSManaged public var sposobPrzygotowania: String?
     @NSManaged public var wstep: String?
+    @NSManaged public var ocena: Int64
     @NSManaged public var autor: Uzytkownik?
     @NSManaged public var ulubione: NSSet?
 

@@ -113,18 +113,30 @@ class DanieKategorieVC:
     func menuSetup(){
         let cenaup = UIAction(title: "Cena rosnąco", attributes: []){ action in
             self.delegate?.sortujDania(.cenaUp)
+            self.sortButton.setTitle("Cena rosnąco", for: .normal)
         }
         let cenadown = UIAction(title: "Cena malejąco", attributes: []){ action in
             self.delegate?.sortujDania(.cenaDown)
+            self.sortButton.setTitle("Cena malejąco", for: .normal)
         }
         let czasup = UIAction(title: "Czas przygotowania rosnąco", attributes: []){ action in
             self.delegate?.sortujDania(.czasUp)
+            self.sortButton.setTitle("Czas przygotowania rosnąco", for: .normal)
             
         }
         let czasdown = UIAction(title: "Czas przygotowania malejąco", attributes: []){ action in
             self.delegate?.sortujDania(.czasDown)
+            self.sortButton.setTitle("Czas przygotowania malejąco", for: .normal)
         }
-        let rodzajesortowania:[UIAction]=[cenaup,cenadown,czasup,czasdown]
+        let ocenadown = UIAction(title: "Ocena malejąco", attributes: []){ action in
+            self.delegate?.sortujDania(.ocenaDown)
+            self.sortButton.setTitle("Ocena malejąco", for: .normal)
+        }
+        let ocenaup = UIAction(title: "Ocena rosnąco", attributes: []){ action in
+            self.delegate?.sortujDania(.ocenaUp)
+            self.sortButton.setTitle("Ocena rosnąco", for: .normal)
+        }
+        let rodzajesortowania:[UIAction]=[cenaup,cenadown,czasup,czasdown,ocenaup,ocenadown]
         
         let menu = UIMenu(title: "Sortuj po:", children: rodzajesortowania)
         sortButton.showsMenuAsPrimaryAction=true

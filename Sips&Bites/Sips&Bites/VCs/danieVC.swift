@@ -18,7 +18,20 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     @IBOutlet weak var kosztLabel: UILabel!
     @IBOutlet weak var czasLabel: UILabel!
     @IBOutlet weak var profilLabel: UILabel!
+    @IBOutlet weak var ocenaLabel: UILabel!
     @IBOutlet weak var autorLabel: UILabel!
+    @IBOutlet weak var ocenaEdit: UIStepper!
+    
+    
+    @IBAction func ocenaChanged(_ sender: Any) {
+        danie?.ocena=Int64(ocenaEdit.value)
+        ocenaLabel.text=String(Int64(ocenaEdit.value))
+        do{
+            try context.save()
+        }catch{
+            
+        }
+    }
     
     @IBOutlet weak var likeButton: UIButton!
     
@@ -57,12 +70,13 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     
     
 
-
+    //MARK: - zmienne
     var users:[Uzytkownik]=[]
     var danieLiked:Bool?
     var likeState:likedState?
     var danie: Danie?
     var skladniki:[Skladnik]=[]
+    var ocena:Int64?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,19 +106,7 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         }else{
             autorLabel.text="Autor niepodany"
         }
-        if (users.isEmpty==false){
-            danieLiked=users[0].ulubione?.contains(danie as Any)
-        }
-        switch danieLiked {
-        case true:
-            setLiked(likeButton)
-        case false:
-            setUnliked(likeButton)
-        case .none:
-            setUnliked(likeButton)
-        case .some(_):
-            setUnliked(likeButton)
-        }
+        likeButtonConfig()
         
         
         //print(skladniki)
@@ -128,7 +130,7 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         })
         sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         likeState = .liked
-        print(sender.currentImage)
+        
     }
     
     func setUnliked(_ sender: UIButton){
@@ -150,6 +152,27 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         textView.layer.borderColor=UIColor.lightGray.cgColor
         textView.layer.cornerRadius=5
         
+    }
+    
+    func likeButtonConfig(){
+        likeButton.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 45), forImageIn: .normal)
+        if (users.isEmpty==false){
+            danieLiked=users[0].ulubione?.contains(danie as Any)
+        }
+        switch danieLiked {
+        case true:
+            setLiked(likeButton)
+        case false:
+            setUnliked(likeButton)
+        case .none:
+            setUnliked(likeButton)
+        case .some(_):
+            setUnliked(likeButton)
+        }
+        if let ocena=danie?.ocena{
+            ocenaEdit.value=Double(ocena)
+            ocenaLabel.text=String(ocena)
+        }
     }
     
     

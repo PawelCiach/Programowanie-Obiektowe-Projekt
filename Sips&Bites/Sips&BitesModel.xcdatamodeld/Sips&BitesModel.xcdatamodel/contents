@@ -12,6 +12,7 @@
         <attribute name="czasPrzygotowania" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="koszt" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="nazwaPrzepisu" optional="YES" attributeType="String"/>
+        <attribute name="ocena" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" customClassName="[Int64]"/>
         <attribute name="profilSmakowy" optional="YES" attributeType="String"/>
         <attribute name="sposobPrzygotowania" optional="YES" attributeType="String"/>
         <attribute name="wstep" optional="YES" attributeType="String"/>

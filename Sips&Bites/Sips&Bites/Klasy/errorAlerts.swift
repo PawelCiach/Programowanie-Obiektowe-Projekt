@@ -6,7 +6,7 @@
 //
 
 import UIKit
-public class alerts:UIViewController{
+class alerts:UIViewController{
     public func coreDataError(){
         let alert=UIAlertController(title: "Błąd", message: "Błąd zapisu", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel))

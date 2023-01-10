@@ -9,11 +9,15 @@ public enum sortType{
     case czasDown
     case cenaUp
     case cenaDown
+    case ocenaUp
+    case ocenaDown
 }
 
 
 
 class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filtr{
+    
+    //MARK: - sortowanie
     func sortujDania(_ sortBy: sortType) {
         switch sortBy {
         case .cenaUp:
@@ -44,8 +48,20 @@ class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filt
             daniaFiltr.sort{
                 $0.czasPrzygotowania>$1.czasPrzygotowania
             }
-           
-        
+        case .ocenaUp:
+            dania.sort{
+                $0.ocena<$1.ocena
+            }
+            daniaFiltr.sort{
+                $0.ocena<$1.ocena
+            }
+        case .ocenaDown:
+            dania.sort{
+                $0.ocena>$1.ocena
+            }
+            daniaFiltr.sort{
+                $0.ocena>$1.ocena
+            }
         }
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -63,7 +79,7 @@ class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filt
             self.tableView.reloadData()
         }
     }
-    
+    //MARK: - Filtrowanie
     func filtrSkladnik(_ skladniki: [Skladnik]) {
         skladnikiFiltr=skladniki
         if (skladnikiFiltr?.isEmpty==false){

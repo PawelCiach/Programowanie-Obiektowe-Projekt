@@ -267,7 +267,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoV-Td-lUV">
-                                <rect key="frame" x="296" y="284" width="107" height="29"/>
+                                <rect key="frame" x="231" y="284" width="172" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Wyczyść filtry ">
@@ -303,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vg1-89-bOQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2177" y="-715"/>
+            <point key="canvasLocation" x="2176.8115942028985" y="-715.17857142857144"/>
         </scene>
         <!--DanieVC-->
         <scene sceneID="UME-iH-sQG">
@@ -408,6 +408,20 @@
                                                     <action selector="likeTapped:" destination="mnh-QK-1Ru" eventType="touchUpInside" id="3a9-mf-ahN"/>
                                                 </connections>
                                             </button>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="psf-Hc-f6z">
+                                                <rect key="frame" x="160" y="483" width="94" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="ocenaChanged:" destination="mnh-QK-1Ru" eventType="valueChanged" id="6yn-DV-hcJ"/>
+                                                </connections>
+                                            </stepper>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JP8-io-uuM">
+                                                <rect key="frame" x="160" y="438" width="94" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -455,6 +469,8 @@
                         <outlet property="kosztLabel" destination="jgY-o7-9Nv" id="fSe-bT-1cY"/>
                         <outlet property="likeButton" destination="meX-h5-UvO" id="647-BV-xgT"/>
                         <outlet property="nazwaD" destination="1aE-H6-7Ir" id="4tC-5h-pz7"/>
+                        <outlet property="ocenaEdit" destination="psf-Hc-f6z" id="wyX-aJ-7b5"/>
+                        <outlet property="ocenaLabel" destination="JP8-io-uuM" id="MT7-TF-msf"/>
                         <outlet property="profilLabel" destination="ZKV-mn-0dL" id="FHd-aB-VII"/>
                         <outlet property="textView" destination="Pg8-8l-HdM" id="E2e-PG-xHP"/>
                         <segue destination="GMM-6F-SZu" kind="unwind" identifier="backToDaniaVC" unwindAction="unwind:" id="2q1-QE-LMa"/>
@@ -961,7 +977,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtK-0y-awR">
-                                <rect key="frame" x="83" y="336" width="248" height="35"/>
+                                <rect key="frame" x="20" y="336" width="374" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="arrowtriangle.down.square" catalog="system"/>
                                 <buttonConfiguration key="configuration" style="tinted" imagePlacement="trailing" title="Sortuj" imagePadding="130" titleAlignment="leading">
