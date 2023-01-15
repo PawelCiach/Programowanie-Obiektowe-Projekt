@@ -980,7 +980,7 @@
                                 <rect key="frame" x="20" y="336" width="374" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="arrowtriangle.down.square" catalog="system"/>
-                                <buttonConfiguration key="configuration" style="tinted" imagePlacement="trailing" title="Sortuj" imagePadding="130" titleAlignment="leading">
+                                <buttonConfiguration key="configuration" style="tinted" imagePlacement="trailing" title="Sortuj" imagePadding="23" titleAlignment="center">
                                     <imageReference key="image" image="arrow.down.app.fill" catalog="system" symbolScale="large" variableValue="0.0"/>
                                 </buttonConfiguration>
                             </button>
