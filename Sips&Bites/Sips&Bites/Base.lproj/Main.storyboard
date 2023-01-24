@@ -567,13 +567,13 @@
                     <connections>
                         <outlet property="tableView" destination="EVj-cn-Vu0" id="T3x-xE-0Wv"/>
                         <segue destination="X1Q-jJ-ekd" kind="show" identifier="toCocktailVC" id="0gB-p4-iX0"/>
-                        <segue destination="oPs-jE-byV" kind="modal" identifier="toCocktailsCategories" id="E9p-ck-aQf"/>
                         <segue destination="sdG-Dc-Whh" kind="show" identifier="toNowyCocktail" id="C6q-aO-2jt"/>
+                        <segue destination="UYw-19-Yrn" kind="modal" id="2C2-hQ-csC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fY-mC-caf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2202.898550724638" y="199.55357142857142"/>
+            <point key="canvasLocation" x="2174" y="102"/>
         </scene>
         <!--UserVC-->
         <scene sceneID="Lju-Xc-vNH">
@@ -690,34 +690,6 @@
                 <exit id="ACO-lb-Wrx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2973.913043478261" y="767.41071428571422"/>
-        </scene>
-        <!--Cocktaile CategoriesVC-->
-        <scene sceneID="OPt-v5-mUk">
-            <objects>
-                <viewController id="oPs-jE-byV" customClass="cocktaileCategoriesVC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wSz-5X-q1d" customClass="cocktailCategoriesVC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tu bedą kategorie wyboru cocktaili" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="htg-pM-1kV">
-                                <rect key="frame" x="57" y="407" width="300" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="fCq-h8-eke"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="htg-pM-1kV" firstAttribute="centerY" secondItem="wSz-5X-q1d" secondAttribute="centerY" id="Ljv-zE-CWm"/>
-                            <constraint firstItem="htg-pM-1kV" firstAttribute="centerX" secondItem="wSz-5X-q1d" secondAttribute="centerX" id="hiw-ES-DwP"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="vSt-RT-LRW"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b1w-MW-z7I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2975" y="110"/>
         </scene>
         <!--New DanieVC-->
         <scene sceneID="Sww-2w-qLc">
@@ -938,7 +910,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jtG-AF-ZYb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="5Xr-6a-xAd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2071.0144927536235" y="-1647.3214285714284"/>
+            <point key="canvasLocation" x="2175" y="-1598"/>
         </scene>
         <!--Danie KategorieVC-->
         <scene sceneID="eEk-1R-EpN">
@@ -1005,7 +977,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zB1-hN-QCU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2973.913043478261" y="-1197.3214285714284"/>
+            <point key="canvasLocation" x="2974" y="-1278"/>
         </scene>
         <!--New CocktailVC-->
         <scene sceneID="7DK-Rr-fTb">
@@ -1200,6 +1172,67 @@
                 <exit id="aXI-ba-Qwf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2203" y="1120"/>
+        </scene>
+        <!--Cocktail KategorieVC-->
+        <scene sceneID="XRp-gD-AaK">
+            <objects>
+                <viewController id="UYw-19-Yrn" customClass="CocktailKategorieVC" customModule="Sips_Bites" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="prD-M7-ahj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tjK-3V-mhx">
+                                <rect key="frame" x="0.0" y="48" width="414" height="244"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="filterSkladnikiCell" id="x1T-xW-68e">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x1T-xW-68e" id="fkg-19-ACb">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLn-aW-lYP">
+                                <rect key="frame" x="20" y="690" width="374" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="0G5-Jw-zGO"/>
+                                    <constraint firstAttribute="width" constant="374" id="qmL-Cz-gQC"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Filtruj">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAU-tY-iaa">
+                                <rect key="frame" x="20" y="336" width="374" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="arrowtriangle.down.square" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="tinted" imagePlacement="trailing" title="Sortuj" imagePadding="23" titleAlignment="center">
+                                    <imageReference key="image" image="arrow.down.app.fill" catalog="system" symbolScale="large" variableValue="0.0"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="22L-50-hIR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="22L-50-hIR" firstAttribute="bottom" secondItem="WLn-aW-lYP" secondAttribute="bottom" constant="95" id="3gA-vr-oIv"/>
+                            <constraint firstItem="tjK-3V-mhx" firstAttribute="trailing" secondItem="22L-50-hIR" secondAttribute="trailing" id="JBf-8F-a38"/>
+                            <constraint firstItem="22L-50-hIR" firstAttribute="trailing" secondItem="WLn-aW-lYP" secondAttribute="trailing" constant="20" id="LGb-Ws-y1c"/>
+                            <constraint firstItem="WLn-aW-lYP" firstAttribute="leading" secondItem="22L-50-hIR" secondAttribute="leading" constant="20" id="Sec-CP-dtI"/>
+                            <constraint firstItem="tjK-3V-mhx" firstAttribute="leading" secondItem="22L-50-hIR" secondAttribute="leading" id="ckp-Ln-wdm"/>
+                            <constraint firstItem="WLn-aW-lYP" firstAttribute="top" secondItem="tjK-3V-mhx" secondAttribute="bottom" constant="398" id="d7e-Et-Wuz"/>
+                            <constraint firstItem="tjK-3V-mhx" firstAttribute="top" secondItem="22L-50-hIR" secondAttribute="top" id="tH6-dT-JDs"/>
+                            <constraint firstItem="WLn-aW-lYP" firstAttribute="top" secondItem="tjK-3V-mhx" secondAttribute="bottom" constant="398" id="xzJ-PD-HVp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="521-ra-g2c"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AN3-RP-N1d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3086" y="103"/>
         </scene>
     </scenes>
     <resources>
