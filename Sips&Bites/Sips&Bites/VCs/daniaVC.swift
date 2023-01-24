@@ -15,7 +15,49 @@ public enum sortType{
 
 
 
-class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filtr{
+class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filtr, UIDocumentPickerDelegate{
+    
+    //MARK: - Import
+    
+    
+    @IBAction func importTapped(_ sender: Any) {
+        let documentPicker=UIDocumentPickerViewController(documentTypes: [".txt"], in: .import)
+        documentPicker.delegate=self
+        documentPicker.modalPresentationStyle = .overFullScreen
+        documentPicker.allowsMultipleSelection=false
+        present(documentPicker,animated: true)
+        
+    }
+    
+    func importDanie(url: URL){
+        do{
+            let danieStr = try String(contentsOf: url)
+            if #available(iOS 16.0, *) {
+                let danieSplit=danieStr.split(separator:"&*&")
+                print(danieSplit[0])
+            } else {
+                // Fallback on earlier versions
+            }
+            
+        }
+        catch{
+            
+        }
+        
+    }
+    
+    
+    
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard controller.documentPickerMode == .import, let url = urls.first else {return}
+        
+        controller.dismiss(animated: true)
+    }
+    
+    
+    
+    
     
     //MARK: - sortowanie
     func sortujDania(_ sortBy: sortType) {
@@ -80,6 +122,7 @@ class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filt
         }
     }
     //MARK: - Filtrowanie
+    
     func filtrSkladnik(_ skladniki: [Skladnik]) {
         skladnikiFiltr=skladniki
         if (skladnikiFiltr?.isEmpty==false){
@@ -139,6 +182,8 @@ class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filt
         super.viewDidLoad()
         ifSorted=false
         fetchDanie()
+        //zapis()
+        
 
     }
     

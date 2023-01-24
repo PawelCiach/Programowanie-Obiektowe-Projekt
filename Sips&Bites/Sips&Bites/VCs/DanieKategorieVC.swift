@@ -61,6 +61,7 @@ class DanieKategorieVC:
 
     @IBAction func filtrujTapped(_ sender: Any) {
         delegate?.filtrSkladnik(skladnikiFilt)
+        
         dismiss(animated: true)        //performSegue(withIdentifier: "backToDaniaVC", sender: skladnikiFilt)
     }
     //MARK: - Outlets
