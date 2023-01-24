@@ -293,7 +293,13 @@
                             <constraint firstAttribute="trailing" secondItem="1Ej-yL-KkZ" secondAttribute="trailing" id="ztQ-IT-3XC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="oMn-Q8-3es"/>
+                    <navigationItem key="navigationItem" id="oMn-Q8-3es">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="folder.badge.plus" catalog="system" id="aFJ-T1-cDS">
+                            <connections>
+                                <action selector="importTapped:" destination="1Nq-ea-yhV" id="szo-AK-Jtf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="1Ej-yL-KkZ" id="eHq-oq-nHO"/>
                         <segue destination="mnh-QK-1Ru" kind="show" identifier="toDanieVC" id="v8z-Ah-hc7"/>
@@ -400,14 +406,6 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meX-h5-UvO">
-                                                <rect key="frame" x="32" y="453" width="95" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <connections>
-                                                    <action selector="likeTapped:" destination="mnh-QK-1Ru" eventType="touchUpInside" id="3a9-mf-ahN"/>
-                                                </connections>
-                                            </button>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="psf-Hc-f6z">
                                                 <rect key="frame" x="160" y="483" width="94" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -422,6 +420,23 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meX-h5-UvO">
+                                                <rect key="frame" x="20" y="427" width="95" height="95"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="likeTapped:" destination="mnh-QK-1Ru" eventType="touchUpInside" id="3a9-mf-ahN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAC-0l-bJK">
+                                                <rect key="frame" x="285" y="427" width="104" height="95"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="shareTapped:" destination="mnh-QK-1Ru" eventType="touchUpInside" id="LIU-Wb-J9V"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -472,6 +487,7 @@
                         <outlet property="ocenaEdit" destination="psf-Hc-f6z" id="wyX-aJ-7b5"/>
                         <outlet property="ocenaLabel" destination="JP8-io-uuM" id="MT7-TF-msf"/>
                         <outlet property="profilLabel" destination="ZKV-mn-0dL" id="FHd-aB-VII"/>
+                        <outlet property="shareButton" destination="TAC-0l-bJK" id="3gP-rR-B8h"/>
                         <outlet property="textView" destination="Pg8-8l-HdM" id="E2e-PG-xHP"/>
                         <segue destination="GMM-6F-SZu" kind="unwind" identifier="backToDaniaVC" unwindAction="unwind:" id="2q1-QE-LMa"/>
                     </connections>
@@ -1239,6 +1255,7 @@
         <image name="arrow.down.app.fill" catalog="system" width="128" height="114"/>
         <image name="arrow.left" catalog="system" width="128" height="95"/>
         <image name="arrowtriangle.down.square" catalog="system" width="128" height="114"/>
+        <image name="folder.badge.plus" catalog="system" width="128" height="92"/>
         <image name="fork.knife" catalog="system" width="94" height="128"/>
         <image name="list.bullet.circle" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>

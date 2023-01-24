@@ -10,7 +10,50 @@ enum likedState{
 
 class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITextViewDelegate {
     
+    func exportToUrl(string: String)->URL?{
+        let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        let path = documents?.appendingPathComponent("danie.txt")
+        do {
+            try string.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
+        } catch{
+            
+        }
+        return path ?? nil
+        
+    }
     
+    
+    func convertToString(danie:Danie)->String{
+        let nazwa = danie.nazwaPrzepisu ?? "brak nazwy"
+        let opis=danie.sposobPrzygotowania ?? "brak opisu"
+        let profil=danie.profilSmakowy ?? "brak profilu"
+        let koszt=String(danie.koszt)
+        let czas=String(danie.czasPrzygotowania)
+        let autor=(danie.autor?.imie ?? "") + " " + (danie.autor?.nazwisko ?? "")
+        var listaskladnikow=""
+        let listailosciskladnikow = danie.iloscSkladnikow
+        var i=0
+        for skladnik in skladniki{
+            listaskladnikow = listaskladnikow + " " + (skladnik.nazwaSkladnika ?? "") + "-"+listailosciskladnikow![i]+";;"
+            i+=1
+        }
+        let danieZestringowane = """
+        &*&\(String(describing: nazwa))&*&
+        Koszt: &*&\(koszt)&*& zł  Czas Wykonania: &*&\(czas)&*& Profil smakowy &*&\(profil)&*&
+        Autor: &*&\(autor)&*&
+        &&&&&&&&
+        &*&\(listaskladnikow)&*&
+        
+        *****
+        
+        &*&\(String(describing: opis))&*&
+        
+        
+        
+        E*N*D
+        """
+        return danieZestringowane
+    }
     
     //MARK: - Outlets and actions
     @IBOutlet weak var collectionView: UICollectionView!
@@ -21,7 +64,17 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     @IBOutlet weak var ocenaLabel: UILabel!
     @IBOutlet weak var autorLabel: UILabel!
     @IBOutlet weak var ocenaEdit: UIStepper!
+    @IBOutlet weak var shareButton: UIButton!
     
+    @IBAction func shareTapped(_ sender: Any) {
+        
+        
+        let objectstoshare=[exportToUrl(string: convertToString(danie: danie!))]
+        let activityVC = UIActivityViewController(activityItems: objectstoshare as [Any], applicationActivities: nil)
+        activityVC.excludedActivityTypes=[UIActivity.ActivityType.addToReadingList]
+        self.present(activityVC, animated: true)
+        
+    }
     
     @IBAction func ocenaChanged(_ sender: Any) {
         danie?.ocena=Int64(ocenaEdit.value)
@@ -32,6 +85,8 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
             
         }
     }
+    
+    
     
     @IBOutlet weak var likeButton: UIButton!
     
@@ -77,7 +132,7 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     var danie: Danie?
     var skladniki:[Skladnik]=[]
     var ocena:Int64?
-    
+    //MARK: - DidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUser()
@@ -107,7 +162,7 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
             autorLabel.text="Autor niepodany"
         }
         likeButtonConfig()
-        
+        shareButtonConfig()
         
         //print(skladniki)
         
@@ -153,7 +208,11 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         textView.layer.cornerRadius=5
         
     }
-    
+    func shareButtonConfig(){
+        shareButton.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 43), forImageIn: .normal)
+        shareButton.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
+        shareButton.setTitle("", for: .normal)
+    }
     func likeButtonConfig(){
         likeButton.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 45), forImageIn: .normal)
         if (users.isEmpty==false){
