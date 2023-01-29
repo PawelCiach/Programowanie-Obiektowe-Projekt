@@ -1,6 +1,8 @@
 
 import UIKit
 import CoreData
+import MobileCoreServices
+import UniformTypeIdentifiers
 
 
 
@@ -21,7 +23,8 @@ class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filt
     
     
     @IBAction func importTapped(_ sender: Any) {
-        let documentPicker=UIDocumentPickerViewController(documentTypes: [".txt"], in: .import)
+        let typ = UTType.types(tag: "json", tagClass: UTTagClass.filenameExtension, conformingTo: nil)
+        let documentPicker=UIDocumentPickerViewController(forOpeningContentTypes: typ)
         documentPicker.delegate=self
         documentPicker.modalPresentationStyle = .overFullScreen
         documentPicker.allowsMultipleSelection=false
@@ -31,13 +34,36 @@ class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filt
     
     func importDanie(url: URL){
         do{
-            let danieStr = try String(contentsOf: url)
-            if #available(iOS 16.0, *) {
-                let danieSplit=danieStr.split(separator:"&*&")
-                print(danieSplit[0])
-            } else {
-                // Fallback on earlier versions
-            }
+            let jsondata = try Data(contentsOf: url)
+            do{
+                let dis = try JSONDecoder().decode(DanieJS.self, from: jsondata)
+                let imp=Danie(context: context)
+                imp.nazwaPrzepisu = dis.nazwaDania
+                imp.sposobPrzygotowania=dis.sposobPrzygotowania
+                imp.koszt=dis.koszt ?? 0
+                imp.czasPrzygotowania=dis.czas ?? 0
+                imp.profilSmakowy=dis.profilSmakowy
+                imp.autor = Uzytkownik(context: context)
+                imp.iloscSkladnikow=dis.ilosciSkladnikow
+                let skladniki = dis.skladniki!
+                let skladnikiAll = try context.fetch(Skladnik.fetchRequest())
+                var skladnikDodawany:Skladnik
+                for skladnik in skladniki{
+                    if skladnikiAll.contains(where: {$0.nazwaSkladnika?.lowercased() == skladnik.lowercased()}){
+                        skladnikDodawany=skladnikiAll.first(where:{$0.nazwaSkladnika?.lowercased()==skladnik.lowercased()})!
+                        imp.addToSkladniki(skladnikDodawany)
+                        
+                    }else{
+                        skladnikDodawany = Skladnik(context: context)
+                        skladnikDodawany.nazwaSkladnika=skladnik
+                        imp.addToSkladniki(skladnikDodawany)
+                    }
+                }
+                try context.save()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }catch{}
             
         }
         catch{
@@ -46,14 +72,16 @@ class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filt
         
     }
     
-    
-    
-    
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        guard controller.documentPickerMode == .import, let url = urls.first else {return}
+        let url=urls[0]
+        importDanie(url: url)
         
         controller.dismiss(animated: true)
     }
+    
+    
+    
+   
     
     
     

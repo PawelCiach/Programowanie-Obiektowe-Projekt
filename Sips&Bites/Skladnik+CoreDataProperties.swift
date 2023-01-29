@@ -59,3 +59,15 @@ extension Skladnik {
 extension Skladnik : Identifiable {
 
 }
+
+/*private enum CodingKeys:String,CodingKey{
+    case nazwaSkladnika,danie
+}
+extension Skladnik :Encodable {
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(nazwaSkladnika, forKey: .nazwaSkladnika)
+        
+        
+    }
+}*/

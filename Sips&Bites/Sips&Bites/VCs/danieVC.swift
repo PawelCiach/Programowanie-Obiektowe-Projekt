@@ -10,11 +10,25 @@ enum likedState{
 
 class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITextViewDelegate {
     
-    func exportToUrl(string: String)->URL?{
+    func danieJsonExport(danie:Danie)->Data{
+        let JSONStructDanie = danie.toStruct()
+        do{
+            let jsonData = try JSONEncoder().encode(JSONStructDanie)
+            print("==========")
+            print (type(of: jsonData))
+            print("==========")
+            let jsonString = String(data: jsonData, encoding: .utf8)!
+            return jsonData
+        }
+        catch{print(error)}
+        return Data(count: 1)
+    }
+
+    func exportToUrl(data: Data)->URL?{
         let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-        let path = documents?.appendingPathComponent("danie.txt")
+        let path = documents?.appendingPathComponent("danie.json")
         do {
-            try string.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
+            try data.write(to: path!)
         } catch{
             
         }
@@ -69,7 +83,7 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     @IBAction func shareTapped(_ sender: Any) {
         
         
-        let objectstoshare=[exportToUrl(string: convertToString(danie: danie!))]
+        let objectstoshare=[exportToUrl(data: danieJsonExport(danie: danie!))]
         let activityVC = UIActivityViewController(activityItems: objectstoshare as [Any], applicationActivities: nil)
         activityVC.excludedActivityTypes=[UIActivity.ActivityType.addToReadingList]
         self.present(activityVC, animated: true)
@@ -163,7 +177,9 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         }
         likeButtonConfig()
         shareButtonConfig()
-        
+        print(danieJsonExport(danie: danie!))
+       // let jsonString = danie?.toJson()
+        //print (jsonString!)
         //print(skladniki)
         
         

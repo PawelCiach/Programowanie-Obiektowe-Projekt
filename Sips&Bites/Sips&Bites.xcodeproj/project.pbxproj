@@ -34,6 +34,7 @@
 		988FDCD62916F4D3004F9470 /* QuestionableDesignChoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988FDCD52916F4D3004F9470 /* QuestionableDesignChoices.swift */; };
 		988FDCDA2916FE1A004F9470 /* PrzepisClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988FDCD92916FE1A004F9470 /* PrzepisClass.swift */; };
 		9899862D2950D8FC0050B1C8 /* DanieKategorieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9899862C2950D8FC0050B1C8 /* DanieKategorieVC.swift */; };
+		98AF09112986C66C00480EE7 /* DanieJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AF09102986C66B00480EE7 /* DanieJSON.swift */; };
 		98B576202947892C007B9EED /* skladnikCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5761F2947892C007B9EED /* skladnikCellModel.swift */; };
 		98DD74C529194BD3008F602E /* DanieClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DD74C429194BD3008F602E /* DanieClass.swift */; };
 		98DD74C729194CE5008F602E /* CocktailClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DD74C629194CE5008F602E /* CocktailClass.swift */; };
@@ -109,6 +110,7 @@
 		988FDCD52916F4D3004F9470 /* QuestionableDesignChoices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionableDesignChoices.swift; sourceTree = "<group>"; };
 		988FDCD92916FE1A004F9470 /* PrzepisClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrzepisClass.swift; sourceTree = "<group>"; };
 		9899862C2950D8FC0050B1C8 /* DanieKategorieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanieKategorieVC.swift; sourceTree = "<group>"; };
+		98AF09102986C66B00480EE7 /* DanieJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanieJSON.swift; sourceTree = "<group>"; };
 		98B5761F2947892C007B9EED /* skladnikCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skladnikCellModel.swift; sourceTree = "<group>"; };
 		98DD74C429194BD3008F602E /* DanieClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanieClass.swift; sourceTree = "<group>"; };
 		98DD74C629194CE5008F602E /* CocktailClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailClass.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				98899D7A2940E4AD00B5E9FE /* Model */,
 				015EA7902906D77700CEEED1 /* AppDelegate.swift */,
 				015EA7922906D77700CEEED1 /* SceneDelegate.swift */,
+				98AF09102986C66B00480EE7 /* DanieJSON.swift */,
 				981E4323291A99CB00B4AA78 /* VCs */,
 				981E4321291A99A700B4AA78 /* Klasy */,
 				015EA7962906D77700CEEED1 /* Main.storyboard */,
@@ -397,6 +400,7 @@
 				98899D4A293E4E6500B5E9FE /* Sips&BitesModel.xcdatamodeld in Sources */,
 				9899862D2950D8FC0050B1C8 /* DanieKategorieVC.swift in Sources */,
 				01A8B5D92907FED600FDE75E /* userVC.swift in Sources */,
+				98AF09112986C66C00480EE7 /* DanieJSON.swift in Sources */,
 				98DD74C729194CE5008F602E /* CocktailClass.swift in Sources */,
 				98E4DFA4295BD8BF00F63339 /* Cocktail+CoreDataClass.swift in Sources */,
 				01013F2B292271F100CE3D5E /* cocktailVC.swift in Sources */,
