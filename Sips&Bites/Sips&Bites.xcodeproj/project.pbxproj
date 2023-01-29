@@ -111,6 +111,7 @@
 		988FDCD92916FE1A004F9470 /* PrzepisClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrzepisClass.swift; sourceTree = "<group>"; };
 		9899862C2950D8FC0050B1C8 /* DanieKategorieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanieKategorieVC.swift; sourceTree = "<group>"; };
 		98AF09102986C66B00480EE7 /* DanieJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanieJSON.swift; sourceTree = "<group>"; };
+		98AF09122987115D00480EE7 /* Sips&Bites.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sips&Bites.entitlements"; sourceTree = "<group>"; };
 		98B5761F2947892C007B9EED /* skladnikCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skladnikCellModel.swift; sourceTree = "<group>"; };
 		98DD74C429194BD3008F602E /* DanieClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanieClass.swift; sourceTree = "<group>"; };
 		98DD74C629194CE5008F602E /* CocktailClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailClass.swift; sourceTree = "<group>"; };
@@ -175,6 +176,7 @@
 		015EA78F2906D77700CEEED1 /* Sips&Bites */ = {
 			isa = PBXGroup;
 			children = (
+				98AF09122987115D00480EE7 /* Sips&Bites.entitlements */,
 				98899D7A2940E4AD00B5E9FE /* Model */,
 				015EA7902906D77700CEEED1 /* AppDelegate.swift */,
 				015EA7922906D77700CEEED1 /* SceneDelegate.swift */,
@@ -602,6 +604,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Sips&Bites/Sips&Bites.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MGFFV5UPUD;
@@ -632,6 +635,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Sips&Bites/Sips&Bites.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MGFFV5UPUD;

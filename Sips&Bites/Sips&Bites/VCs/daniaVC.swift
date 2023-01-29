@@ -67,17 +67,22 @@ class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filt
             
         }
         catch{
-            
+            print(error)
         }
         
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         let url=urls[0]
+        print(url)
+        guard url.startAccessingSecurityScopedResource() else { // Notice this line right here
+             return
+        }
         importDanie(url: url)
         
-        controller.dismiss(animated: true)
+        //controller.dismiss(animated: true)
     }
+    
     
     
     
