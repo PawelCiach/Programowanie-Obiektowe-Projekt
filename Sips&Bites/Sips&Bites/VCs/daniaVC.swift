@@ -43,6 +43,9 @@ class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filt
                 imp.koszt=dis.koszt ?? 0
                 imp.czasPrzygotowania=dis.czas ?? 0
                 imp.profilSmakowy=dis.profilSmakowy
+                if (dis.autor?.lowercased()==(user?.imie?.lowercased() ?? "")+" "+(user?.nazwisko?.lowercased() ?? "")){
+                    imp.autor=user
+                }
                 imp.autor = Uzytkownik(context: context)
                 imp.iloscSkladnikow=dis.ilosciSkladnikow
                 let skladniki = dis.skladniki!
@@ -208,7 +211,8 @@ class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filt
         
     }
     
-    
+    var users:[Uzytkownik]=[]
+    var user:Uzytkownik?
   
     
     override func viewDidLoad() {
@@ -216,6 +220,10 @@ class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filt
         ifSorted=false
         fetchDanie()
         //zapis()
+        do{
+            users = try context.fetch(Uzytkownik.fetchRequest())
+            user=users[0]
+        }catch{}
         
 
     }

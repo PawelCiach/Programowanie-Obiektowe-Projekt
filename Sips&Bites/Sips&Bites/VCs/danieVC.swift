@@ -17,7 +17,6 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
             print("==========")
             print (type(of: jsonData))
             print("==========")
-            let jsonString = String(data: jsonData, encoding: .utf8)!
             return jsonData
         }
         catch{print(error)}
@@ -26,7 +25,7 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
 
     func exportToUrl(data: Data)->URL?{
         let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-        let path = documents?.appendingPathComponent("danie.json")
+        let path = documents?.appendingPathComponent("\(danie?.nazwaPrzepisu ?? "nieznane_danie").json")
         do {
             try data.write(to: path!)
         } catch{
@@ -37,37 +36,7 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
     }
     
     
-    func convertToString(danie:Danie)->String{
-        let nazwa = danie.nazwaPrzepisu ?? "brak nazwy"
-        let opis=danie.sposobPrzygotowania ?? "brak opisu"
-        let profil=danie.profilSmakowy ?? "brak profilu"
-        let koszt=String(danie.koszt)
-        let czas=String(danie.czasPrzygotowania)
-        let autor=(danie.autor?.imie ?? "") + " " + (danie.autor?.nazwisko ?? "")
-        var listaskladnikow=""
-        let listailosciskladnikow = danie.iloscSkladnikow
-        var i=0
-        for skladnik in skladniki{
-            listaskladnikow = listaskladnikow + " " + (skladnik.nazwaSkladnika ?? "") + "-"+listailosciskladnikow![i]+";;"
-            i+=1
-        }
-        let danieZestringowane = """
-        &*&\(String(describing: nazwa))&*&
-        Koszt: &*&\(koszt)&*& zł  Czas Wykonania: &*&\(czas)&*& Profil smakowy &*&\(profil)&*&
-        Autor: &*&\(autor)&*&
-        &&&&&&&&
-        &*&\(listaskladnikow)&*&
-        
-        *****
-        
-        &*&\(String(describing: opis))&*&
-        
-        
-        
-        E*N*D
-        """
-        return danieZestringowane
-    }
+   
     
     //MARK: - Outlets and actions
     @IBOutlet weak var collectionView: UICollectionView!
