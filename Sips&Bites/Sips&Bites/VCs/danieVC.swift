@@ -146,7 +146,7 @@ class danieVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSou
         }
         likeButtonConfig()
         shareButtonConfig()
-        print(danieJsonExport(danie: danie!))
+        print (danie?.autor)
        // let jsonString = danie?.toJson()
         //print (jsonString!)
         //print(skladniki)

@@ -16,6 +16,6 @@ public struct DanieJS : Codable{
     let skladniki:[String]?
     let ilosciSkladnikow:[String]?
     let sposobPrzygotowania:String?
-    let autor:String?
+    let autor:[String]?
     
 }

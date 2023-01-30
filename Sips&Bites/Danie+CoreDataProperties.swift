@@ -97,7 +97,7 @@ extension Danie{
         for skladnik in skladnikiArray{
             skladnikiString.append(skladnik.nazwaSkladnika ?? "")
         }
-        let autor = (self.autor?.imie ?? "") + " " + (self.autor?.nazwisko ?? "")
+        let autor = [self.autor?.imie ?? "",self.autor?.nazwisko ?? "",self.autor?.rola ?? ""]
         let st=DanieJS(nazwaDania: self.nazwaPrzepisu,
                        koszt: self.koszt,
                        czas: self.czasPrzygotowania,

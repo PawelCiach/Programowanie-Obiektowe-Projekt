@@ -43,10 +43,17 @@ class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filt
                 imp.koszt=dis.koszt ?? 0
                 imp.czasPrzygotowania=dis.czas ?? 0
                 imp.profilSmakowy=dis.profilSmakowy
-                if (dis.autor?.lowercased()==(user?.imie?.lowercased() ?? "")+" "+(user?.nazwisko?.lowercased() ?? "")){
+                if(dis.autor?[0]==user?.imie && dis.autor?[1]==user?.nazwisko && dis.autor?[2]==user?.rola){
                     imp.autor=user
+                }else if(users.contains(where: {$0.imie==dis.autor?[0]&&$0.nazwisko==dis.autor?[1]&&$0.rola==dis.autor?[2]})){
+                    imp.autor==users.first(where: {$0.imie==dis.autor?[0] && $0.nazwisko==dis.autor?[1] && $0.rola==dis.autor?[2]})!
+                }else{
+                    let newuser=Uzytkownik(context: context)
+                    newuser.imie=dis.autor?[0]
+                    newuser.nazwisko=dis.autor?[1]
+                    newuser.rola=dis.autor?[2]
+                    imp.autor=newuser
                 }
-                imp.autor = Uzytkownik(context: context)
                 imp.iloscSkladnikow=dis.ilosciSkladnikow
                 let skladniki = dis.skladniki!
                 let skladnikiAll = try context.fetch(Skladnik.fetchRequest())
@@ -63,9 +70,7 @@ class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filt
                     }
                 }
                 try context.save()
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+                
             }catch{}
             
         }
@@ -73,6 +78,7 @@ class daniaVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Filt
             print(error)
         }
         
+        fetchDanie()
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {

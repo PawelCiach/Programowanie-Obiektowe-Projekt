@@ -35,18 +35,26 @@ class userVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUser()
+        //deleteUsers()
         if(us?.isEmpty==true){
             _=Uzytkownik(context: context)
             save()
         }
         fetchUser()
-        
+        print(us)
         currentuser=us![0]
         imieField.text=currentuser?.imie
         nazwiskoField.text=currentuser?.nazwisko
         rolaField.text=currentuser?.rola
     }
-    
+    func deleteUsers(){
+        for user in us!{
+            context.delete(user)
+        }
+        do{
+            try self.context.save()
+        }catch{}
+    }
     
     func fetchUser(){
         do{
