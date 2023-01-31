@@ -607,7 +607,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Sips&Bites/Sips&Bites.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MGFFV5UPUD;
+				DEVELOPMENT_TEAM = GP3S2F86K7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sips&Bites/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
